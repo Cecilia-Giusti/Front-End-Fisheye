@@ -1,10 +1,3 @@
-// Fonction pour récuperer les données du json des photographes
-async function getPhotographersHeader() {
-  return fetch("../data/photographers.json")
-    .then((file) => file.json())
-    .then((data) => data.photographers);
-}
-
 //Fonction pour créer la section de présentation du photographe
 function displayDataHeader(photographerFind) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
@@ -27,7 +20,7 @@ function getPhotographer(photographer) {
 //FONCTION D INITIALISATION DE LA PAGE DES PHOTOGRAPHES
 async function init() {
   // Récupération du fichier Json
-  const photographers = await getPhotographersHeader();
+  const photographers = await getPhotographers();
 
   // Récupération de l'indice du photographe
   const indPhotographer = photographers.findIndex(getPhotographer);
