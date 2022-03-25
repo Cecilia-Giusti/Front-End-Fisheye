@@ -8,8 +8,6 @@ async function getPhotographersHeader() {
 //Fonction pour créer la section de présentation du photographe
 function displayDataHeader(photographerFind) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
-  console.log(photographerFind);
-
   const photographer = new photographerHeader(photographerFind);
   const template = new PhotographerPageHeader(photographer);
   photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
@@ -23,15 +21,13 @@ function getPhotographer(photographer) {
 
   //Transformation de l'id en nombre
   const idPhotographerGet = Number(idPhotographerGetString);
-
   return photographer.id === idPhotographerGet;
 }
 
-//Fonction d'initiation de la page d'accueil
+//FONCTION D INITIALISATION DE LA PAGE DES PHOTOGRAPHES
 async function init() {
   // Récupération du fichier Json
   const photographers = await getPhotographersHeader();
-  console.log(photographers);
 
   // Récupération de l'indice du photographe
   const indPhotographer = photographers.findIndex(getPhotographer);

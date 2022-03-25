@@ -9,7 +9,6 @@ class photographerHeader {
   }
 
   get name() {
-    console.log(this._name);
     return this._name;
   }
 
