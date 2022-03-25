@@ -50,6 +50,44 @@
   color: black;
 }
 
+/* Galerie  */
+
+#section-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+  padding-top: 5%;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#section-gallery article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+#section-gallery img {
+  width: 450px;
+  height: 400px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section-gallery_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-gallery_content h3,
+.section-gallery_content p {
+  color: #901c1c;
+  font-size: 1.4em;
+}
+
 /* Formulaire de contact */
 
 .contact_button {
