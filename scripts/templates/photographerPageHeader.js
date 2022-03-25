@@ -1,8 +1,7 @@
 // Classe pour créer une page
-class PhotographerHeaderPage {
-  constructor(photographer, media) {
+class PhotographerPageHeader {
+  constructor(photographer) {
     this._photographer = photographer;
-    this._media = media;
   }
 
   // Méthode pour créer la section de présentation du photographe

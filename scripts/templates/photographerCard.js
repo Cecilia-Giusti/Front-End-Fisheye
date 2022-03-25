@@ -10,7 +10,7 @@ class PhotographerCard {
     const picture = `assets/photographers/${this._photographer.portrait}`;
 
     const photographerCard = `
-            <a href="./photographer.html">
+            <a href="./photographer.html?id=${this._photographer.id}">
               <img class="img_photographer img_photographerIndex--size" src="${picture}" alt="Photo portrait de ${this._photographer.name}"/>
               <div class="photographer-content">
                 <h2>${this._photographer.name}</h2>

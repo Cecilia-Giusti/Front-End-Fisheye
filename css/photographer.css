@@ -44,7 +44,8 @@
   font-family: "DM Sans", sans-serif;
 }
 
-#section-header button:hover {
+#section-header button:hover,
+#section-header button:focus {
   background-color: #db8876;
   color: black;
 }
