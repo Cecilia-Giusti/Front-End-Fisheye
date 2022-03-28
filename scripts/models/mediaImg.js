@@ -15,7 +15,8 @@ class MediaImg {
   }
 
   get media() {
-    return this._media;
+    const picture = `<img src="assets/medias/${this._media}" alt="${this._title}" />`;
+    return picture;
   }
 
   get likes() {

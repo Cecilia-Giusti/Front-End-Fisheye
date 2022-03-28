@@ -68,7 +68,8 @@
   margin-bottom: 2%;
 }
 
-#section-gallery img {
+#section-gallery img,
+#section-gallery video {
   width: 450px;
   height: 400px;
   -o-object-fit: cover;

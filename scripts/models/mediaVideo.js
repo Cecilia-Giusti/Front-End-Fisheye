@@ -15,7 +15,12 @@ class MediaVideo {
   }
 
   get media() {
-    return this._media;
+    const video = `
+    <video controls>
+      <source src="assets/medias/${this._media}" type="video/mp4">
+    </video>
+    `;
+    return video;
   }
 
   get likes() {
