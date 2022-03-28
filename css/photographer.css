@@ -157,3 +157,34 @@ form input {
   border: none;
   border-radius: 5px;
 }
+
+/* Footer */
+
+footer {
+  width: 350px;
+  height: 60px;
+  background-color: #db8876;
+  border-radius: 5px 5px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 40px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.footer p {
+  color: black;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.footer i {
+  margin-left: 5px;
+}

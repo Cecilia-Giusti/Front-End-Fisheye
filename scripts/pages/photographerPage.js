@@ -1,5 +1,5 @@
 //Fonction pour créer la section de présentation du photographe
-function displayDataHeader(photographerFind) {
+function Header(photographerFind) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
   const template = new PhotographerPageHeader(photographerFind);
   photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
@@ -17,26 +17,8 @@ function getPhotographer(photographer) {
 }
 
 // Fonction principale pour la mise en place de la galerie
-async function main() {
-  // Récupération des médias
-  const mediaData = await getMedias();
-
-  // Tri des médias par id du photographe
-  const params = new URLSearchParams(document.location.search);
-  const idPhotographerGetString = params.get("id");
-  const idPhotographerGet = Number(idPhotographerGetString);
-  console.log(idPhotographerGet);
-
-  let photographerMediasArray = [];
-
-  for (let i = 0; i < mediaData.length; i++) {
-    if (mediaData[i].photographerId === idPhotographerGet) {
-      photographerMediasArray.push(mediaData[i]);
-    }
-  }
-
-  console.log(photographerMediasArray);
-
+async function main(photographerMediasArray) {
+  // Ajout d'un type aux médias du photographe
   let photographerMedia = [];
   photographerMediasArray.forEach((media) => {
     if (media.hasOwnProperty("image")) {
@@ -50,7 +32,6 @@ async function main() {
     }
   });
 
-  console.log(photographerMedia);
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
 
@@ -60,20 +41,54 @@ async function main() {
   });
 }
 
+function footer(photographerFind, photographerMediasArray) {
+  //Création d'un tableau avec tous les likes d'un photographe
+  let photographerLikes = [];
+  for (let i = 0; i < photographerMediasArray.length; i++) {
+    photographerLikes.push(photographerMediasArray[i].likes);
+  }
+
+  //Envoi des datas au constructor
+  const photographerFooter = new Footer(photographerFind, photographerLikes);
+
+  //Création du footer
+  const photographersFooterPage = document.querySelector("footer");
+  const template = new PhotographerPageFooter(photographerFooter);
+  photographersFooterPage.appendChild(template.createPhotographerFooterPage());
+}
+
 //FONCTION D INITIALISATION DE LA PAGE DES PHOTOGRAPHES
 async function init() {
   // Récupération du fichier Json
-  const photographers = await getPhotographers();
+  const photographersData = await getPhotographers();
+  const mediaData = await getMedias();
 
   // Récupération de l'indice du photographe
-  const indPhotographer = photographers.findIndex(getPhotographer);
-  const photographerFind = photographers[indPhotographer];
+  const indPhotographer = photographersData.findIndex(getPhotographer);
+  const photographerFind = photographersData[indPhotographer];
+
+  // Tri des médias par id du photographe
+  const params = new URLSearchParams(document.location.search);
+  const idPhotographerGetString = params.get("id");
+  const idPhotographerGet = Number(idPhotographerGetString);
+
+  //Création d'un tableau avec les médias du photographe
+  let photographerMediasArray = [];
+
+  for (let i = 0; i < mediaData.length; i++) {
+    if (mediaData[i].photographerId === idPhotographerGet) {
+      photographerMediasArray.push(mediaData[i]);
+    }
+  }
 
   //Header de la page photographe
-  displayDataHeader(photographerFind);
+  Header(photographerFind);
 
   //Galerie du photographe
-  main();
+  main(photographerMediasArray);
+
+  //Footer de la page photographe
+  footer(photographerFind, photographerMediasArray);
 }
 
 init();
