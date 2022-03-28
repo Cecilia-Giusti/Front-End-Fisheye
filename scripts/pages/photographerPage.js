@@ -1,8 +1,7 @@
 //Fonction pour créer la section de présentation du photographe
 function displayDataHeader(photographerFind) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
-  const photographer = new PhotographerHeader(photographerFind);
-  const template = new PhotographerPageHeader(photographer);
+  const template = new PhotographerPageHeader(photographerFind);
   photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
 }
 
