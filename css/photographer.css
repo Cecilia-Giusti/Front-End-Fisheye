@@ -158,6 +158,12 @@ form input {
   border-radius: 5px;
 }
 
+/* Likes */
+
+p.liked {
+  color: #db8876;
+}
+
 /* Footer */
 
 footer {

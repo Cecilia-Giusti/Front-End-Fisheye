@@ -35,8 +35,8 @@ async function main(photographerMediasArray) {
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
 
-  photographerMedia.forEach((media) => {
-    const Template = new MediaCard(media);
+  photographerMedia.forEach((media, likes) => {
+    const Template = new MediaCard(media, likes);
     gallery.appendChild(Template.createMediaCard());
   });
 }
@@ -86,6 +86,15 @@ async function init() {
 
   //Galerie du photographe
   main(photographerMediasArray);
+
+  //Likes
+  const likes = document.querySelectorAll(".like-btn");
+
+  likes.forEach((like) => {
+    like.addEventListener("click", function () {
+      likesButton(like);
+    });
+  });
 
   //Footer de la page photographe
   footer(photographerFind, photographerMediasArray);

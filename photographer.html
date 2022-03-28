@@ -53,15 +53,31 @@
         </form>
       </div>
     </div>
-    <script src="scripts/Api/fetch.js"></script>
-    <script src="/scripts/templates/photographerPageHeader.js"></script>
-    <script src="/scripts/templates/photographerPageFooter.js"></script>
-    <script src="/scripts/templates/mediaCard.js"></script>
+    <!-- Factories -->
+    <script src="scripts/factories/mediaFactory.js"></script>
+
+    <!-- Models -->
     <script src="scripts/models/mediaImg.js"></script>
     <script src="scripts/models/mediaVideo.js"></script>
     <script src="scripts/models/footer.js"></script>
-    <script src="scripts/factories/mediaFactory.js"></script>
-    <script src="/scripts/pages/photographerPage.js"></script>
+
+    <!-- Templates -->
+    <script src="/scripts/templates/photographerPageHeader.js"></script>
+    <script src="/scripts/templates/photographerPageFooter.js"></script>
+    <script src="/scripts/templates/mediaCard.js"></script>
+
+    <!-- Api -->
+    <script src="scripts/Api/fetch.js"></script>
+
+    <!-- Pub/Sub -->
+    <script src="/scripts/likes/subject.js"></script>
+    <script src="/scripts/likes/counter.js"></script>
+    <script src="/scripts/likes/likeButton.js"></script>
+
+    <!-- Utils -->
     <script src="/scripts/utils/contactForm.js"></script>
+
+    <!-- Entry point -->
+    <script src="/scripts/pages/photographerPage.js"></script>
   </body>
 </html>
