@@ -1,36 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1365cabd78.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Fisheye - photographe</title>
   </head>
+
   <body>
+    <!-- En tête  -->
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <!-- Logo  -->
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
     </header>
+
+    <!-- Corps  -->
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+      <!-- Section de présentation  -->
+
+      <section id="section-header" class="photograph-header"></section>
+      <!-- Galerie -->
+      <section id="section-gallery"></section>
     </main>
+    <footer></footer>
+
+    <!-- Modale de contact  -->
     <div id="contact_modal">
-			<div class="modal">
-				<header>
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <!-- <img
+            src="assets/icons/close.svg"
+            alt="croix de fermeture"
+            onclick="closeModal()"
+          /> -->
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
+        <!-- Formulaire de contact  -->
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
           <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        </form>
+      </div>
+    </div>
+    <script src="scripts/Api/fetch.js"></script>
+    <script src="/scripts/templates/photographerPageHeader.js"></script>
+    <script src="/scripts/templates/photographerPageFooter.js"></script>
+    <script src="/scripts/templates/mediaCard.js"></script>
+    <script src="scripts/models/mediaImg.js"></script>
+    <script src="scripts/models/mediaVideo.js"></script>
+    <script src="scripts/models/footer.js"></script>
+    <script src="scripts/factories/mediaFactory.js"></script>
+    <script src="/scripts/pages/photographerPage.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

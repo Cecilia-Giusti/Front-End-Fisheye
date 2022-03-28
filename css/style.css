@@ -29,7 +29,8 @@ header h1 {
   margin-top: 100px;
 }
 
-.photographer_section article {
+.photographer_section article a {
+  text-decoration: none;
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -37,13 +38,21 @@ header h1 {
   flex-direction: column;
 }
 
-.photographer_section article img {
-  height: 200px;
-  width: 200px;
+.img_photographer {
   border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
   box-shadow: 0px 5px 10px 1px rgba(201, 197, 197, 0.51);
+}
+
+.img_photographerIndex--size {
+  height: 200px;
+  width: 200px;
+}
+
+.img_photographerPage--size {
+  height: 250px;
+  width: 250px;
 }
 
 .photographer-content {
@@ -54,14 +63,14 @@ header h1 {
   margin: 0;
 }
 
-.photographer-content h1 {
+.photographer-content h2 {
   color: #d3573c;
   font-size: 2em;
   font-weight: 400;
   margin-bottom: 0;
 }
 
-.photographer-content h2 {
+.photographer-content h3 {
   color: #901c1c;
   margin-top: 0;
   margin-bottom: 0;
@@ -72,6 +81,7 @@ header h1 {
 .photographer-content p {
   margin: 0;
   font-size: 0.6em;
+  color: black;
 }
 
 .price {
