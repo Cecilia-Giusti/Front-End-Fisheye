@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -10,17 +10,23 @@
     />
     <title>Fisheye</title>
   </head>
+
   <body>
+    <!-- En tête  -->
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <!-- Logo  -->
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
       <h1>Nos photographes</h1>
     </header>
+
+    <!-- Corps  -->
     <main id="main">
+      <!-- Section  -->
       <div class="photographer_section"></div>
     </main>
+    <script src="scripts/Api/fetch.js"></script>
     <script src="scripts/factories/Photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/templates/photographerCard.js"></script>
+    <script src="scripts/pages/index.js"></script>
   </body>
 </html>
