@@ -3,11 +3,11 @@ class LikeSubject {
     this._observers = [];
   }
 
-  subscribe(observer) {
+  like(observer) {
     this._observers.push(observer);
   }
 
-  unsubscribe(observer) {
+  dislike(observer) {
     this._observers = this._observers.filter((obs) => obs !== observer);
   }
 

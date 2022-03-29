@@ -11,32 +11,42 @@ function getPhotographer(photographer) {
   const params = new URLSearchParams(document.location.search);
   const idPhotographerGetString = params.get("id");
 
-  //Transformation de l'id en nombre
-  const idPhotographerGet = Number(idPhotographerGetString);
-  return photographer.id === idPhotographerGet;
+  if (idPhotographerGetString != "") {
+    //Transformation de l'id en nombre
+    const idPhotographerGet = Number(idPhotographerGetString);
+    return photographer.id === idPhotographerGet;
+  } else {
+    document.location.href = "../index.html";
+  }
 }
 
 // Fonction principale pour la mise en place de la galerie
 async function main(photographerMediasArray) {
   // Ajout d'un type aux médias du photographe
-  let photographerMedia = [];
-  photographerMediasArray.forEach((media) => {
-    if (media.hasOwnProperty("image")) {
-      const mediasImg = new MediaFactory(media, "image");
-      photographerMedia.push(mediasImg);
-    } else if (media.hasOwnProperty("video")) {
-      const mediasVideo = new MediaFactory(media, "video");
-      photographerMedia.push(mediasVideo);
-    } else {
-      console.log("error");
-    }
-  });
+  function mediaArray(photographerMediasArray) {
+    let photographerMedia = [];
+    photographerMediasArray.forEach((media) => {
+      if (media.hasOwnProperty("image")) {
+        const mediasImg = new MediaFactory(media, "image");
+        photographerMedia.push(mediasImg);
+      } else if (media.hasOwnProperty("video")) {
+        const mediasVideo = new MediaFactory(media, "video");
+        photographerMedia.push(mediasVideo);
+      } else {
+        console.log("error");
+      }
+    });
+    return photographerMedia;
+  }
 
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
+  // WishLib Pub/sub
+  const likeSubject = new LikeSubject();
+  const likeCounter = new LikeCounter();
 
-  photographerMedia.forEach((media, likes) => {
-    const Template = new MediaCard(media, likes);
+  mediaArray(photographerMediasArray).forEach((media, likes, likeSubject) => {
+    const Template = new MediaCard(media, likes, likeSubject);
     gallery.appendChild(Template.createMediaCard());
   });
 }
@@ -87,17 +97,10 @@ async function init() {
   //Galerie du photographe
   main(photographerMediasArray);
 
-  //Likes
-  const likes = document.querySelectorAll(".like-btn");
-
-  likes.forEach((like) => {
-    like.addEventListener("click", function () {
-      likesButton(like);
-    });
-  });
-
   //Footer de la page photographe
   footer(photographerFind, photographerMediasArray);
+
+  // this.WishlistSubject.subscribe(this.WhishListCounter);
 }
 
 init();

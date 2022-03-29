@@ -1,6 +1,7 @@
 class LikeCounter {
-  constructor(media) {
-    this._count = media.likes;
+  constructor() {
+    this._count = 0; // envoyer le bon nombre de like
+    this._$likeCount = document.querySelector(".wish-count"); // Mettre le noeud du bon chiffre de like
   }
 
   update(action) {
@@ -11,5 +12,7 @@ class LikeCounter {
     } else {
       throw "Unknow action";
     }
+
+    this._$likeCount.innerHTML = this._count;
   }
 }
