@@ -11,45 +11,46 @@ function getPhotographer(photographer) {
   const params = new URLSearchParams(document.location.search);
   const idPhotographerGetString = params.get("id");
 
-  //Transformation de l'id en nombre
-  const idPhotographerGet = Number(idPhotographerGetString);
-  return photographer.id === idPhotographerGet;
+  if (idPhotographerGetString != "") {
+    //Transformation de l'id en nombre
+    const idPhotographerGet = Number(idPhotographerGetString);
+    return photographer.id === idPhotographerGet;
+  } else {
+    document.location.href = "../index.html";
+  }
 }
 
 // Fonction principale pour la mise en place de la galerie
-async function main(photographerMediasArray) {
+function main(photographerMediasArray) {
   // Ajout d'un type aux médias du photographe
-  let photographerMedia = [];
-  photographerMediasArray.forEach((media) => {
-    if (media.hasOwnProperty("image")) {
-      const mediasImg = new MediaFactory(media, "image");
-      photographerMedia.push(mediasImg);
-    } else if (media.hasOwnProperty("video")) {
-      const mediasVideo = new MediaFactory(media, "video");
-      photographerMedia.push(mediasVideo);
-    } else {
-      console.log("error");
-    }
-  });
+  function mediaArray(photographerMediasArray) {
+    let photographerMedia = [];
+    photographerMediasArray.forEach((media) => {
+      if (media.hasOwnProperty("image")) {
+        const mediasImg = new MediaFactory(media, "image");
+        photographerMedia.push(mediasImg);
+      } else if (media.hasOwnProperty("video")) {
+        const mediasVideo = new MediaFactory(media, "video");
+        photographerMedia.push(mediasVideo);
+      } else {
+        console.log("error");
+      }
+    });
+    return photographerMedia;
+  }
 
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
 
-  photographerMedia.forEach((media) => {
+  mediaArray(photographerMediasArray).forEach((media) => {
     const Template = new MediaCard(media);
     gallery.appendChild(Template.createMediaCard());
   });
 }
 
 function footer(photographerFind, photographerMediasArray) {
-  //Création d'un tableau avec tous les likes d'un photographe
-  let photographerLikes = [];
-  for (let i = 0; i < photographerMediasArray.length; i++) {
-    photographerLikes.push(photographerMediasArray[i].likes);
-  }
-
   //Envoi des datas au constructor
-  const photographerFooter = new Footer(photographerFind, photographerLikes);
+  const photographerFooter = new Footer(photographerFind);
 
   //Création du footer
   const photographersFooterPage = document.querySelector("footer");
@@ -88,7 +89,7 @@ async function init() {
   main(photographerMediasArray);
 
   //Footer de la page photographe
-  footer(photographerFind, photographerMediasArray);
+  footer(photographerFind);
 }
 
 init();
