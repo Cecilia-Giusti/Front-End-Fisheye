@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class MediaVideo {
   constructor(data) {
     this._photographerId = data.photographerId;
