@@ -10,7 +10,7 @@ class PhotographerPageFooter {
     $wrapper.setAttribute("class", "footer");
 
     const photographerCard = `
-        <p> ${this._photographer.totalLikes} <i class="fas fa-heart fa-lg"></i> </p>
+        <p><span id="totalLike">${this._photographer.totalLikes} </span><i class="fas fa-heart fa-lg"></i> </p>
         <p> ${this._photographer.price}€ / jour</p>
             `;
     $wrapper.innerHTML = photographerCard;

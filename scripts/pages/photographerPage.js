@@ -21,7 +21,7 @@ function getPhotographer(photographer) {
 }
 
 // Fonction principale pour la mise en place de la galerie
-async function main(photographerMediasArray) {
+function main(photographerMediasArray) {
   // Ajout d'un type aux médias du photographe
   function mediaArray(photographerMediasArray) {
     let photographerMedia = [];
@@ -41,25 +41,16 @@ async function main(photographerMediasArray) {
 
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
-  // WishLib Pub/sub
-  const likeSubject = new LikeSubject();
-  const likeCounter = new LikeCounter();
 
-  mediaArray(photographerMediasArray).forEach((media, likes, likeSubject) => {
-    const Template = new MediaCard(media, likes, likeSubject);
+  mediaArray(photographerMediasArray).forEach((media) => {
+    const Template = new MediaCard(media);
     gallery.appendChild(Template.createMediaCard());
   });
 }
 
 function footer(photographerFind, photographerMediasArray) {
-  //Création d'un tableau avec tous les likes d'un photographe
-  let photographerLikes = [];
-  for (let i = 0; i < photographerMediasArray.length; i++) {
-    photographerLikes.push(photographerMediasArray[i].likes);
-  }
-
   //Envoi des datas au constructor
-  const photographerFooter = new Footer(photographerFind, photographerLikes);
+  const photographerFooter = new Footer(photographerFind);
 
   //Création du footer
   const photographersFooterPage = document.querySelector("footer");
@@ -98,9 +89,7 @@ async function init() {
   main(photographerMediasArray);
 
   //Footer de la page photographe
-  footer(photographerFind, photographerMediasArray);
-
-  // this.WishlistSubject.subscribe(this.WhishListCounter);
+  footer(photographerFind);
 }
 
 init();

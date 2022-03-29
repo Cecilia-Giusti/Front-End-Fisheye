@@ -1,24 +1,19 @@
 // Classe pour créer une page
 class MediaCard {
-  constructor(media, likes, likeSubject) {
+  constructor(media) {
     this._media = media;
     this._count = media.likes;
-    this.likeSubject = likeSubject;
 
     this.$wrapper = document.createElement("article");
   }
 
   likeButton() {
-    const that = this;
-
     let numberLikes = this._count;
 
     this.$wrapper
       .querySelector(".like-btn")
       .addEventListener("click", function () {
         if (this.parentNode.classList.contains("liked")) {
-          console.log(this.parentNode.firstChild);
-
           this.parentNode.classList.remove("liked");
           numberLikes -= 1;
           this.parentNode.firstChild.innerHTML = numberLikes;
