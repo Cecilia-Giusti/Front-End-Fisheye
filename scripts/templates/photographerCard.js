@@ -1,4 +1,5 @@
 // Classe pour créer une carte
+// eslint-disable-next-line no-unused-vars
 class PhotographerCard {
   constructor(photographer) {
     this._photographer = photographer;

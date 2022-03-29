@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-prototype-builtins */
 //Fonction pour créer la section de présentation du photographe
 function Header(photographerFind) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
@@ -48,7 +50,7 @@ function main(photographerMediasArray) {
   });
 }
 
-function footer(photographerFind, photographerMediasArray) {
+function footer(photographerFind) {
   //Envoi des datas au constructor
   const photographerFooter = new Footer(photographerFind);
 

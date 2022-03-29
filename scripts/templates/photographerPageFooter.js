@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Classe pour créer une page
 class PhotographerPageFooter {
   constructor(photographer) {

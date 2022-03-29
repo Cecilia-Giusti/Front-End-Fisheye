@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 //Fonction pour créer le tableaux des photographes
 async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");

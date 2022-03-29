@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 class Footer {
   constructor(photographerFind) {
     this._price = photographerFind.price;

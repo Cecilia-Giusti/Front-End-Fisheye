@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 class MediaFactory {
   constructor(data, type) {
     // Si le type correspond à une image

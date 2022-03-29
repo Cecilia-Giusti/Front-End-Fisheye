@@ -1,4 +1,5 @@
-// Classe pour créer une page
+/* eslint-disable no-unused-vars */
+
 class MediaCard {
   constructor(media) {
     this._media = media;
