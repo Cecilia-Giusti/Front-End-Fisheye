@@ -38,6 +38,7 @@ function main(photographerMediasArray) {
         console.log("error");
       }
     });
+
     return photographerMedia;
   }
 

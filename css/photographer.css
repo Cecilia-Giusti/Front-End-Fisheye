@@ -60,6 +60,7 @@
   margin: auto;
   padding-top: 3%;
   gap: 5%;
+  align-items: center;
 }
 
 .filter-form label {
@@ -70,10 +71,10 @@
 .filter-form select {
   background-color: #901c1c;
   color: white;
-  line-height: 2em;
-  width: 10%;
+  width: 12%;
   font-family: "DM Sans", sans-serif;
-  padding-left: 1%;
+  padding: 2px;
+  padding-left: 20px;
   font-weight: 500;
   font-size: 1.3em;
 }
