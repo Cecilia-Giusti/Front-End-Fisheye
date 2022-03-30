@@ -11,7 +11,7 @@ class Filter {
     this.$mmainWrapper.innerHTML = "";
   }
 
-  filter(select) {
+  filter(select, photographerFind) {
     this.clearMainWrapper();
 
     const filter = new SelectFilter(this._media);
@@ -27,12 +27,13 @@ class Filter {
         break;
     }
     main(filter._media);
+    footer(photographerFind);
   }
 
-  onChangeFilter() {
+  onChangeFilter(photographerFind) {
     this._$wrapper.querySelector("form").addEventListener("change", (e) => {
       const select = e.target.value;
-      this.filter(select);
+      this.filter(select, photographerFind);
     });
   }
 }

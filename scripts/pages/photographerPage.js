@@ -95,7 +95,7 @@ async function init() {
 
   //Filtres
   const filter = new Filter(photographerMediasArray);
-  filter.onChangeFilter();
+  filter.onChangeFilter(photographerFind);
 }
 
 init();
