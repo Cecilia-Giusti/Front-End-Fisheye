@@ -38,6 +38,7 @@ function main(photographerMediasArray) {
         console.log("error");
       }
     });
+
     return photographerMedia;
   }
 
@@ -92,6 +93,10 @@ async function init() {
 
   //Footer de la page photographe
   footer(photographerFind);
+
+  //Filtres
+  const filter = new Filter(photographerMediasArray);
+  filter.onChangeFilter(photographerFind);
 }
 
 init();

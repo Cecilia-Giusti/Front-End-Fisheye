@@ -27,8 +27,19 @@
     <!-- Corps  -->
     <main id="main">
       <!-- Section de présentation  -->
-
       <section id="section-header" class="photograph-header"></section>
+      <!-- Filtres -->
+      <section id="filters">
+        <form class="filter-form" action="#" method="POST">
+          <label for="filter">Trier par</label>
+          <select name="filters" id="filter">
+            <option value="Aucun">Aucun</option>
+            <option value="popularité">Popularité</option>
+            <option value="date">Date</option>
+            <option value="Titre">Titre</option>
+          </select>
+        </form>
+      </section>
       <!-- Galerie -->
       <section id="section-gallery"></section>
     </main>
@@ -72,7 +83,9 @@
     <script src="scripts/Api/fetch.js"></script>
 
     <!-- Utils -->
+    <script src="/scripts/utils/selectFilter.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/utils/filter.js"></script>
 
     <!-- Entry point -->
     <script src="/scripts/pages/photographerPage.js"></script>
