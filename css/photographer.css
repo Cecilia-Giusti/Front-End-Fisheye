@@ -6,6 +6,7 @@
   background-color: #fafafa;
   width: 90%;
   margin: auto;
+  border-radius: 5px;
 }
 
 /* Section de présentation */
@@ -50,13 +51,41 @@
   color: black;
 }
 
+/*Filtres  */
+
+.filter-form {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  padding-top: 3%;
+  gap: 5%;
+  align-items: center;
+}
+
+.filter-form label {
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.filter-form select {
+  background-color: #901c1c;
+  color: white;
+  width: 12%;
+  font-family: "DM Sans", sans-serif;
+  padding: 2px;
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
 /* Galerie  */
 
 #section-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 10%;
-  padding-top: 5%;
+  padding-top: 3%;
   width: 90%;
   margin: auto;
   justify-content: space-between;
