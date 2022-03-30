@@ -18,10 +18,12 @@ class MediaCard {
           this.parentNode.classList.remove("liked");
           numberLikes -= 1;
           this.parentNode.firstChild.innerHTML = numberLikes;
+          return numberLikes;
         } else {
           this.parentNode.classList.add("liked");
           numberLikes += 1;
           this.parentNode.firstChild.innerHTML = numberLikes;
+          return numberLikes;
         }
       });
   }
