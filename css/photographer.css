@@ -71,10 +71,10 @@
 .filter-form select {
   background-color: #901c1c;
   color: white;
-  width: 12%;
   font-family: "DM Sans", sans-serif;
   padding: 2px;
   padding-left: 20px;
+  padding-right: 20px;
   font-weight: 500;
   font-size: 1.3em;
 }
@@ -84,7 +84,7 @@
 #section-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 20px;
   padding-top: 3%;
   width: 90%;
   margin: auto;
@@ -99,8 +99,8 @@
 
 #section-gallery img,
 #section-gallery video {
-  width: 450px;
-  height: 400px;
+  width: 350px;
+  height: 300px;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 8px;
