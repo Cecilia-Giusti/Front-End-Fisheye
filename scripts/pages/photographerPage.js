@@ -43,6 +43,22 @@ function footer(photographer) {
   photographersFooterPage.appendChild(template.createPhotographerFooterPage());
 }
 
+function filter(photographerMediasArray, photographerFind) {
+  const filter = new Filter(photographerMediasArray);
+  filter.onChangeFilter(photographerFind);
+}
+
+function lightbox(photographerMediasArray) {
+  const lightbox = new Lightbox(mediaArray(photographerMediasArray));
+  const galleryLightbox = document.querySelectorAll("#section-gallery article");
+
+  galleryLightbox.forEach((media) =>
+    media.addEventListener("click", (e) => {
+      lightbox.show(e.target.dataset.id);
+    })
+  );
+}
+
 //FONCTION D INITIALISATION DE LA PAGE DES PHOTOGRAPHES
 async function init() {
   // Récupération du fichier Json
@@ -77,18 +93,10 @@ async function init() {
   footer(photographerFind);
 
   //Filtres
-  const filter = new Filter(photographerMediasArray);
-  filter.onChangeFilter(photographerFind);
+  filter(photographerMediasArray, photographerFind);
 
   // LightBox
-  const lightbox = new Lightbox(mediaArray(photographerMediasArray));
-  const galleryLightbox = document.querySelectorAll("#section-gallery article");
-
-  galleryLightbox.forEach((media) =>
-    media.addEventListener("click", (e) => {
-      lightbox.show(e.target.dataset.id);
-    })
-  );
+  lightbox(photographerMediasArray);
 }
 
 init();
