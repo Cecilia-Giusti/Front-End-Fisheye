@@ -71,12 +71,81 @@
 .filter-form select {
   background-color: #901c1c;
   color: white;
-  width: 12%;
   font-family: "DM Sans", sans-serif;
   padding: 2px;
   padding-left: 20px;
+  padding-right: 20px;
   font-weight: 500;
   font-size: 1.3em;
+}
+
+
+
+/* Lightbox */
+
+#lightbox {
+  position : fixed;
+  top: 0px; 
+  left: 0px; 
+  width: 100vw;
+  height: 100vh;
+  z-index:50;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox .btn{
+  border: none;
+  background-color: white;
+  color:#901c1c;
+  font-size: 2em;
+}
+
+.close {
+  position:absolute;
+  top:30px;
+  right:0;
+}
+
+.lightbox_content {
+  display: flex;
+padding-top:2%;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  
+}
+
+.lightbox_content h4 {
+color:#901c1c;
+font-size: 1.2em;
+margin-top:10px;
+}
+
+.lightbox_content--img {
+  display:flex;
+  flex-direction: column;
+  margin-left:20px;
+  margin-right: 20px;
+ 
+}
+
+.lightbox_content--img img, .lightbox_content--img video {
+  width: 1050px;
+  height: 900px;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display:flex;
 }
 
 /* Galerie  */
@@ -84,7 +153,7 @@
 #section-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 20px;
   padding-top: 3%;
   width: 90%;
   margin: auto;
@@ -99,8 +168,8 @@
 
 #section-gallery img,
 #section-gallery video {
-  width: 450px;
-  height: 400px;
+  width: 350px;
+  height: 300px;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 8px;
@@ -115,8 +184,9 @@
 .section-gallery_content h3,
 .section-gallery_content p {
   color: #901c1c;
-  font-size: 1.4em;
+  font-size: 1em;
 }
+
 
 /* Formulaire de contact */
 

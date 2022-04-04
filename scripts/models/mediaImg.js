@@ -5,6 +5,7 @@ class MediaImg {
     this._title = data.title;
     this._media = data.image;
     this._likes = data.likes;
+    this._id = data.id;
   }
 
   get photographerId() {
@@ -16,7 +17,7 @@ class MediaImg {
   }
 
   get media() {
-    const picture = `<img src="assets/medias/${this._media}" alt="${this._title}" />`;
+    const picture = `<img src="assets/medias/${this._media}" alt="${this._title}" data-id="${this._id}"/>`;
     return picture;
   }
 
