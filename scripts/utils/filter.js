@@ -28,6 +28,7 @@ class Filter {
     }
     main(filter._media);
     footer(photographerFind);
+    lightbox(filter._media);
   }
 
   onChangeFilter(photographerFind) {
