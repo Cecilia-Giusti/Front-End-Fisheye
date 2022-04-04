@@ -82,10 +82,10 @@ async function init() {
 
   // LightBox
   const lightbox = new Lightbox(mediaArray(photographerMediasArray));
-  const galleryLightbox = document.querySelectorAll("#section-gallery img");
+  const galleryLightbox = document.querySelectorAll("#section-gallery article");
 
-  galleryLightbox.forEach((img) =>
-    img.addEventListener("click", (e) => {
+  galleryLightbox.forEach((media) =>
+    media.addEventListener("click", (e) => {
       lightbox.show(e.target.dataset.id);
     })
   );

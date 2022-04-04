@@ -6,7 +6,6 @@ class LightboxCard {
   }
 
   createLightboxCard() {
-    console.log(this._media);
     const lightBoxcard = `
     <button class="btn previous"><i class="fa-solid fa-angle-left"></i></button>
     <div class="lightbox_content--img">

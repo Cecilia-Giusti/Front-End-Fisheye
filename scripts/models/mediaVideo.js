@@ -18,8 +18,8 @@ class MediaVideo {
 
   get media() {
     const video = `
-    <video controls>
-      <source src="assets/medias/${this._media}" type="video/mp4" data-id="${this._id}">
+    <video data-id="${this._id}">
+      <source src="assets/medias/${this._media}" type="video/mp4">
     </video>
     `;
     return video;
