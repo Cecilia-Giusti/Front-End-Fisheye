@@ -50,7 +50,7 @@ function filter(photographerMediasArray, photographerFind) {
 
 function lightbox(photographerMediasArray) {
   const lightbox = new Lightbox(mediaArray(photographerMediasArray));
-  const galleryLightbox = document.querySelectorAll("#section-gallery article");
+  const galleryLightbox = document.querySelectorAll("#section-gallery .media");
 
   galleryLightbox.forEach((media) =>
     media.addEventListener("click", (e) => {
