@@ -5,6 +5,7 @@ class MediaVideo {
     this._title = data.title;
     this._media = data.video;
     this._likes = data.likes;
+    this._id = data.id;
   }
 
   get photographerId() {
@@ -18,7 +19,7 @@ class MediaVideo {
   get media() {
     const video = `
     <video controls>
-      <source src="assets/medias/${this._media}" type="video/mp4">
+      <source src="assets/medias/${this._media}" type="video/mp4" data-id="${this._id}">
     </video>
     `;
     return video;

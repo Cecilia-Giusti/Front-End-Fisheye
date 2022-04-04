@@ -1,9 +1,10 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-prototype-builtins */
+
 //Fonction pour créer la section de présentation du photographe
-function Header(photographerFind) {
+function Header(photographer) {
   const photographersHeaderPage = document.querySelector(".photograph-header");
-  const template = new PhotographerPageHeader(photographerFind);
+  const template = new PhotographerPageHeader(photographer);
   photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
 }
 
@@ -24,36 +25,17 @@ function getPhotographer(photographer) {
 
 // Fonction principale pour la mise en place de la galerie
 function main(photographerMediasArray) {
-  // Ajout d'un type aux médias du photographe
-  function mediaArray(photographerMediasArray) {
-    let photographerMedia = [];
-    photographerMediasArray.forEach((media) => {
-      if (media.hasOwnProperty("image")) {
-        const mediasImg = new MediaFactory(media, "image");
-        photographerMedia.push(mediasImg);
-      } else if (media.hasOwnProperty("video")) {
-        const mediasVideo = new MediaFactory(media, "video");
-        photographerMedia.push(mediasVideo);
-      } else {
-        console.log("error");
-      }
-    });
-
-    return photographerMedia;
-  }
-
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
-
   mediaArray(photographerMediasArray).forEach((media) => {
     const Template = new MediaCard(media);
     gallery.appendChild(Template.createMediaCard());
   });
 }
 
-function footer(photographerFind) {
+function footer(photographer) {
   //Envoi des datas au constructor
-  const photographerFooter = new Footer(photographerFind);
+  const photographerFooter = new Footer(photographer);
 
   //Création du footer
   const photographersFooterPage = document.querySelector("footer");
@@ -97,6 +79,16 @@ async function init() {
   //Filtres
   const filter = new Filter(photographerMediasArray);
   filter.onChangeFilter(photographerFind);
+
+  // LightBox
+  const lightbox = new Lightbox(mediaArray(photographerMediasArray));
+  const galleryLightbox = document.querySelectorAll("#section-gallery img");
+
+  galleryLightbox.forEach((img) =>
+    img.addEventListener("click", (e) => {
+      lightbox.show(e.target.dataset.id);
+    })
+  );
 }
 
 init();
