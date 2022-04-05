@@ -32,9 +32,13 @@ class ContactForm {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    console.log(first);
-    console.log(last);
-    console.log(email);
-    console.log(message);
+    if (first != "" && last != "" && email != "" && message != "") {
+      console.log(first);
+      console.log(last);
+      console.log(email);
+      console.log(message);
+    } else {
+      console.error("error");
+    }
   }
 }
