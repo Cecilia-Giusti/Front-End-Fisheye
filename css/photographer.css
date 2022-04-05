@@ -1,12 +1,10 @@
-#contact_modal {
+/* Utiles */
+.display-none {
   display: none;
 }
 
-.photograph-header {
-  background-color: #fafafa;
-  width: 90%;
-  margin: auto;
-  border-radius: 5px;
+.display-flex {
+  display:flex;
 }
 
 /* Section de présentation */
@@ -140,13 +138,7 @@ margin-top:10px;
 }
 
 
-.display-none {
-  display: none;
-}
 
-.display-flex {
-  display:flex;
-}
 
 /* Galerie  */
 
@@ -190,6 +182,22 @@ margin-top:10px;
 
 /* Formulaire de contact */
 
+.photograph-header {
+  background-color: #fafafa;
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#contact_modal{
+  width: 100vw;
+  height: 100vh;
+  position :fixed;
+  top:0;
+  left:0;
+  background-color: rgba(196, 196, 196, 0.4);
+}
+
 .contact_button {
   font-size: 20px;
   font-weight: bold;
@@ -206,28 +214,40 @@ margin-top:10px;
 .modal {
   border-radius: 5px;
   background-color: #db8876;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
   margin: auto;
+  margin-top:2%;
 }
 
 .modal header {
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
+  align-items: flex-start;
+  margin-bottom:2%;
 }
 
 .modal header img {
   cursor: pointer;
 }
 
-.modal header h2 {
-  font-size: 64px;
+.modal_title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal header h2, .contactName {
+  font-size: 3.5em;
   font-weight: normal;
   text-align: center;
+  margin-top:0;
+  margin-bottom:0;
+  
 }
 
 form {
@@ -235,6 +255,7 @@ form {
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
+  margin-top:10%;
 }
 
 form label {

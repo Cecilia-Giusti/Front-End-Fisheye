@@ -59,6 +59,29 @@ function lightbox(photographerMediasArray) {
   );
 }
 
+// Fonction pour le formulaire de contact
+
+function contactForm(photographerFind) {
+  const buttonOpen = document.getElementById("contactBtn");
+  const buttonClose = document.getElementById("closeContact");
+
+  const contact = new ContactForm(photographerFind);
+
+  buttonOpen.addEventListener("click", function () {
+    contact.displayModal();
+  });
+  buttonClose.addEventListener("click", function () {
+    contact.closeModal();
+  });
+
+  const form = document.getElementById("form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    contact.showModal();
+    contact.closeModal();
+  });
+}
+
 //FONCTION D INITIALISATION DE LA PAGE DES PHOTOGRAPHES
 async function init() {
   // Récupération du fichier Json
@@ -97,6 +120,9 @@ async function init() {
 
   // LightBox
   lightbox(photographerMediasArray);
+
+  // Formulaire de contact
+  contactForm(photographerFind);
 }
 
 init();

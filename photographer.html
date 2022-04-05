@@ -53,23 +53,47 @@
     <footer></footer>
 
     <!-- Modale de contact  -->
-    <div id="contact_modal">
+    <div id="contact_modal" class="display-none">
       <div class="modal">
         <header>
-          <h2>Contactez-moi</h2>
-          <!-- <img
-            src="assets/icons/close.svg"
-            alt="croix de fermeture"
-            onclick="closeModal()"
-          /> -->
+          <div class="modal_title">
+            <h2 id="contactMe">Contactez-moi</h2>
+            <img
+              id="closeContact"
+              src="assets/icons/close.svg"
+              alt="croix de fermeture"
+            />
+          </div>
         </header>
         <!-- Formulaire de contact  -->
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
+        <form id="form" method="GET">
+          <!-- Prénom -->
+          <div class="formData">
+            <label for="first">Prénom</label>
+            <input class="text-control" type="text" id="first" name="first" />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <!-- Nom  -->
+          <div class="formData">
+            <label for="last">Nom</label>
+            <input class="text-control" type="text" id="last" name="last" />
+          </div>
+          <!-- Email -->
+          <div class="formData">
+            <label for="email">Email</label>
+            <input class="text-control" type="email" id="email" name="email" />
+          </div>
+          <!-- Message -->
+          <div class="formData">
+            <label for="message">Message</label>
+            <input
+              class="text-control"
+              type="textarea"
+              id="message"
+              name="message"
+            />
+          </div>
+
+          <input type="submit" class="contact_button" value="Envoyer" />
         </form>
       </div>
     </div>
@@ -84,7 +108,7 @@
     <!-- Templates -->
     <script src="scripts/templates/photographerPageHeader.js"></script>
     <script src="scripts/templates/photographerPageFooter.js"></script>
-    <script src="scripts/templates/pediaCard.js"></script>
+    <script src="scripts/templates/mediaCard.js"></script>
     <script src="scripts/templates/LightboxCard.js"></script>
 
     <!-- Api -->
