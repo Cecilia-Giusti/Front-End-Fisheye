@@ -4,7 +4,6 @@
 
 // Ajout d'un type aux médias d'un photographe
 function mediaArray(photographerMediasArray) {
-  console.log(photographerMediasArray);
   let photographerMedia = [];
   photographerMediasArray.forEach((media) => {
     if (media.hasOwnProperty("image")) {
@@ -14,7 +13,7 @@ function mediaArray(photographerMediasArray) {
       const mediasVideo = new MediaFactory(media, "video");
       photographerMedia.push(mediasVideo);
     } else {
-      console.log("error");
+      console.error("error");
     }
   });
   return photographerMedia;

@@ -8,7 +8,6 @@ class SelectFilter {
     const dateFilter = this._media.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-    console.log(dateFilter);
     return dateFilter;
   }
 

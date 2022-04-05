@@ -9,8 +9,6 @@ class Lightbox {
   }
 
   next() {
-    console.log(this._listElement);
-    console.log(this._currentElement);
     let index = this._listElement.findIndex(
       (element) => element._id == this._currentElement._id
     );
