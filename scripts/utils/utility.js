@@ -2,6 +2,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
+// Outils
+
 // Ajout d'un type aux médias d'un photographe
 function mediaArray(photographerMediasArray) {
   let photographerMedia = [];

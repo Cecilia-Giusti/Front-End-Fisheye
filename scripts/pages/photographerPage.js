@@ -1,13 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-prototype-builtins */
 
-//Fonction pour créer la section de présentation du photographe
-function Header(photographer) {
-  const photographersHeaderPage = document.querySelector(".photograph-header");
-  const template = new PhotographerPageHeader(photographer);
-  photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
-}
-
 // Fonction pour récupérer l'id du photographe
 function getPhotographer(photographer) {
   // Récupération de l'id du photographe dans la barre de naviguation
@@ -21,6 +14,13 @@ function getPhotographer(photographer) {
   } else {
     document.location.href = "../index.html";
   }
+}
+
+//Fonction pour créer la section de présentation du photographe
+function Header(photographer) {
+  const photographersHeaderPage = document.querySelector(".photograph-header");
+  const template = new PhotographerPageHeader(photographer);
+  photographersHeaderPage.appendChild(template.createPhotographerHeaderPage());
 }
 
 // Fonction principale pour la mise en place de la galerie
@@ -43,11 +43,13 @@ function footer(photographer) {
   photographersFooterPage.appendChild(template.createPhotographerFooterPage());
 }
 
+//Fonction pour la création d'un filtre de la galerie
 function filter(photographerMediasArray, photographerFind) {
   const filter = new Filter(photographerMediasArray);
   filter.onChangeFilter(photographerFind);
 }
 
+// Fonction pour la création de la lightbox
 function lightbox(photographerMediasArray) {
   const lightbox = new Lightbox(mediaArray(photographerMediasArray));
   const galleryLightbox = document.querySelectorAll("#section-gallery .media");
@@ -60,13 +62,13 @@ function lightbox(photographerMediasArray) {
 }
 
 // Fonction pour le formulaire de contact
-
 function contactForm(photographerFind) {
   const buttonOpen = document.getElementById("contactBtn");
   const buttonClose = document.getElementById("closeContact");
 
   const contact = new ContactForm(photographerFind);
 
+  // Ajout d'évenements au click du bouton et de la croix
   buttonOpen.addEventListener("click", function () {
     contact.displayModal();
   });
@@ -74,6 +76,7 @@ function contactForm(photographerFind) {
     contact.closeModal();
   });
 
+  // Ajout d'un évenement à l'envoi du formulaire
   const form = document.getElementById("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();

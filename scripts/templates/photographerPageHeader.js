@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-// Classe pour créer une page
+
+// Classe pour créer l'en tête d'une page d'un photographe
 class PhotographerPageHeader {
   constructor(photographer) {
     this._photographer = photographer;

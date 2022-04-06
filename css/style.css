@@ -1,8 +1,24 @@
+
+
+
 @media all {
+/* Utiles */
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display:flex;
+}
+
+  /* Page index */
+
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
 }
+
+/* En tête */
 
 header {
   display: flex;
@@ -21,9 +37,13 @@ header h1 {
   margin-left: 100px;
 }
 
+/* Corps */
+
 main {
   padding-bottom: 5%;
 }
+
+/* Section */
 
 .photographer_section {
   display: grid;
@@ -31,6 +51,8 @@ main {
   gap: 70px;
   margin-top: 100px;
 }
+
+/*  Carte des photogrpahes */
 
 .photographer_section article a {
   text-decoration: none;
@@ -40,6 +62,8 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+/* Image du photopgrahe */
 
 .img_photographer {
   border-radius: 50%;
@@ -57,6 +81,8 @@ main {
   height: 250px;
   width: 250px;
 }
+
+/* Contenu  */
 
 .photographer-content {
   display: flex;
@@ -91,16 +117,8 @@ main {
   color: #757575;
 }
 
+/* Page d'un photographe */
 
-
-  /* Utiles */
-  .display-none {
-    display: none;
-  }
-  
-  .display-flex {
-    display:flex;
-  }
   
   /* Section de présentation */
   #section-header article {
@@ -429,6 +447,7 @@ main {
   
   }
 
+ 
   @media (max-width:1440px){
     #section-header h1{
       font-size: 3.2em;

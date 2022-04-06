@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+
+// Class pour le classement des médias en fonction du filtre sélectionné
 class SelectFilter {
   constructor(media) {
     this._media = media;

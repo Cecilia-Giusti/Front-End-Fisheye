@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+// Class pour la création des articles avec les médias d'un photographe
 class MediaCard {
   constructor(media) {
     this._media = media;
@@ -8,9 +9,11 @@ class MediaCard {
     this.$wrapper = document.createElement("article");
   }
 
+  // Gestion des j'aimes
   likeButton() {
     let numberLikes = this._count;
 
+    // Ajout d'un évenement au clic d'un coeur
     this.$wrapper
       .querySelector(".like-btn")
       .addEventListener("click", function () {

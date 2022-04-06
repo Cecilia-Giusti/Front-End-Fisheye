@@ -1,5 +1,6 @@
-// Classe pour créer une carte
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+
+// Classe pour créer une carte dans la page index
 class PhotographerCard {
   constructor(photographer) {
     this._photographer = photographer;

@@ -1,4 +1,6 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+
+//Constructor Pattern - Pour les médias videos
 class MediaVideo {
   constructor(data) {
     this._photographerId = data.photographerId;

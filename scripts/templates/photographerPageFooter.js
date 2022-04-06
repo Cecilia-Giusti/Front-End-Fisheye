@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-// Classe pour créer une page
+
+// Classe pour créer le pied de page d'un photographe
 class PhotographerPageFooter {
   constructor(photographer) {
     this._photographer = photographer;
   }
 
-  // Méthode pour créer la section de présentation du photographe
+  // Méthode pour créer le pied de page d'un photographe
   createPhotographerFooterPage() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "footer");
