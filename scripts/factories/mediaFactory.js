@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
+// Factory Pattern
 class MediaFactory {
   constructor(data, type) {
     // Si le type correspond à une image

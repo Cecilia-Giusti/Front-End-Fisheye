@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-// Classe pour créer une page
+
+// Classe pour créer l'en tête d'une page d'un photographe
 class PhotographerPageHeader {
   constructor(photographer) {
     this._photographer = photographer;
@@ -16,7 +17,7 @@ class PhotographerPageHeader {
             <h2>${this._photographer.city}, ${this._photographer.country}</h2>
             <p>${this._photographer.tagline}</p>
         </div>
-        <button class="contact_button" onclick="displayModal()">
+        <button id="contactBtn" class="contact_button">
             Contactez-moi
         </button>
         <img class="img_photographer img_photographerPage--size" src="${picture}" alt="Photo portrait de ${this._photographer.name}"/>

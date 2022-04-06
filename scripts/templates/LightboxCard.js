@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+
+// Class pour la création d'une lightbox
 class LightboxCard {
   constructor(media) {
     this._media = media;

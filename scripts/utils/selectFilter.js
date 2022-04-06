@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+
+// Class pour le classement des médias en fonction du filtre sélectionné
 class SelectFilter {
   constructor(media) {
     this._media = media;
@@ -8,7 +10,6 @@ class SelectFilter {
     const dateFilter = this._media.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-    console.log(dateFilter);
     return dateFilter;
   }
 
