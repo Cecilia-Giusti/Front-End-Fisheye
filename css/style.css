@@ -146,17 +146,18 @@ p.price {
     margin-bottom: 0;
   }
   
-  #section-header h2 {
-    color: #901c1c;
-    font-size: 2em;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  
   #section-header p {
     font-size: 1.2em;
     margin-top: 0;
+    color: #525252;
+
+  }
+  #section-header h2 {
+    color: #901c1c;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
   #section-header button {
     font-size: 1.2em;
