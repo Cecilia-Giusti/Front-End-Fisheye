@@ -171,33 +171,37 @@ p.price {
     color: black;
   }
   
-  /*Filtres  */
+ /* Aside */
   
-  .filter-form {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    margin: auto;
-    padding-top: 3%;
-    gap: 5%;
-    align-items: center;
-  }
-  
-  .filter-form label {
-    font-weight: 700;
-    font-size: 1.3em;
-  }
-  
-  .filter-form select {
-    background-color: #901c1c;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    padding: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-weight: 500;
-    font-size: 1.3em;
-  }  
+ aside {
+  width: 350px;
+  height: 60px;
+  background-color: #db8876;
+  border-radius: 5px 5px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 40px;
+}
+
+.aside {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.aside p {
+  color: black;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.aside i {
+  margin-left: 5px;
+}
+
   
   /* Lightbox */
   
@@ -257,7 +261,33 @@ p.price {
        object-fit: cover;
   }
   
+   /*Filtres  */
   
+   .filter-form {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    padding-top: 3%;
+    gap: 5%;
+    align-items: center;
+  }
+  
+  .filter-form label {
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  
+  .filter-form select {
+    background-color: #901c1c;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 500;
+    font-size: 1.3em;
+  }  
   
   
   /* Galerie  */
@@ -293,11 +323,34 @@ p.price {
     align-items: center;
   }
   
-  .section-gallery_content h3,
-  .section-gallery_content p {
+  .section-gallery_content h3 {
     color: #901c1c;
     font-size: 1em;
   }
+  .section-gallery_like{
+    display: flex;
+    align-items: center;
+    color: #901c1c;
+  }
+  
+
+  .section-gallery_like button i{
+    color: #901c1c;
+    font-size: 1.4em;
+  }
+
+  .btn_like {
+    border:none;
+    background-color: white;
+  }
+
+  /* Likes */
+  
+  .section-gallery_like.liked {
+    color: #db8876;
+  }
+  
+  
   
   
   /* Formulaire de contact */
@@ -417,43 +470,7 @@ p.price {
   
   }
   
-  /* Likes */
   
-  p.liked {
-    color: #db8876;
-  }
-  
-  /* Footer */
-  
-  footer {
-    width: 350px;
-    height: 60px;
-    background-color: #db8876;
-    border-radius: 5px 5px 0px 0px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin-right: 40px;
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-  
-  .footer p {
-    color: black;
-    font-size: 1.3em;
-    font-weight: 600;
-  }
-  
-  .footer i {
-    margin-left: 5px;
-  }
-
 }
 
  

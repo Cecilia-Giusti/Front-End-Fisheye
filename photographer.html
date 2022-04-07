@@ -35,13 +35,16 @@
       <!-- Section de présentation  -->
       <section id="section-header" class="photograph-header"></section>
 
+      <!-- Aside -->
+      <aside></aside>
+
       <!-- LightBox -->
       <section id="lightbox" class="display-none"></section>
 
       <!-- Filtres -->
       <section id="filters">
         <form class="filter-form" action="#" method="POST">
-          <label for="filter">Trier par</label>
+          <label tabindex="0" for="filter">Trier par</label>
           <select name="filters" id="filter">
             <option value="Aucun">Aucun</option>
             <option value="popularité">Popularité</option>
@@ -54,9 +57,6 @@
       <!-- Galerie -->
       <section id="section-gallery"></section>
     </main>
-
-    <!-- Pied de page -->
-    <footer></footer>
 
     <!-- Modale de contact  -->
     <div id="contact_modal" class="display-none">
@@ -114,11 +114,11 @@
     <!-- Models -->
     <script src="scripts/models/mediaImg.js"></script>
     <script src="scripts/models/mediaVideo.js"></script>
-    <script src="scripts/models/footer.js"></script>
+    <script src="scripts/models/aside.js"></script>
 
     <!-- Templates -->
     <script src="scripts/templates/photographerPageHeader.js"></script>
-    <script src="scripts/templates/photographerPageFooter.js"></script>
+    <script src="scripts/templates/photographerPageAside.js"></script>
     <script src="scripts/templates/mediaCard.js"></script>
     <script src="scripts/templates/LightboxCard.js"></script>
 

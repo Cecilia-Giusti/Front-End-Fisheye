@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
-//Constructor Pattern - Footer
-class Footer {
+//Constructor Pattern - Aside
+class Aside {
   constructor(photographerFind) {
     this._price = photographerFind.price;
     this.$likes = document.getElementsByClassName("like-count");
@@ -16,7 +16,7 @@ class Footer {
       totalLikes += likeNumber;
     }
 
-    const likes = document.getElementsByClassName("like-btn");
+    const likes = document.getElementsByClassName("btn_like");
 
     for (let like of likes) {
       like.addEventListener("click", function () {
