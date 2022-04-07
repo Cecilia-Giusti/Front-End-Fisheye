@@ -46,13 +46,19 @@ main {
 /* Section */
 
 .photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  width:90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 70px;
+margin:auto;
   margin-top: 100px;
 }
 
 /*  Carte des photogrpahes */
+.photographer_section article{
+  width:25%;
+}
 
 .photographer_section article a {
   text-decoration: none;
@@ -62,6 +68,14 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+.photographer_section article a h2{
+  color: #d3573c;
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 
 /* Image du photopgrahe */
 
@@ -91,29 +105,23 @@ main {
   text-align: center;
   margin: 0;
 }
-
-.photographer-content h2 {
-  color: #d3573c;
-  font-size: 2em;
-  font-weight: 400;
-  margin-bottom: 0;
-}
+ 
 
 .photographer-content h3 {
   color: #901c1c;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 400;
 }
 
 .photographer-content p {
   margin: 0;
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: black;
 }
 
-.price {
+p.price {
   color: #757575;
 }
 
@@ -444,8 +452,8 @@ main {
   .footer i {
     margin-left: 5px;
   }
-  
-  }
+
+}
 
  
   @media (max-width:1440px){
@@ -580,3 +588,5 @@ width: 150px;
       width:6%;
     }
   }
+  
+  

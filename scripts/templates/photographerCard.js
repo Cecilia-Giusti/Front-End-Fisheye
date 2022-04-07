@@ -13,15 +13,14 @@ class PhotographerCard {
 
     const photographerCard = `
             <a href="./photographer.html?id=${this._photographer.id}">
-              <img class="img_photographer img_photographerIndex--size" src="${picture}" alt="Photo portrait de ${this._photographer.name}"/>
-              <div class="photographer-content">
-                <h2>${this._photographer.name}</h2>
+              <img class="img_photographer img_photographerIndex--size" src="${picture}" alt=""/>
+              <h2 aria-label="${this._photographer.name}">${this._photographer.name}</h2>
+              </a>   
+              <div role="Text paragraph" tabindex="0" class="photographer-content">
                 <h3>${this._photographer.city}, ${this._photographer.country}</h3>
                 <p class="description"> ${this._photographer.tagline}</p>
                 <p class="price"> ${this._photographer.price}€/jour</p>
-              </div>
-            </a>
-        `;
+              </div>`;
 
     $wrapper.innerHTML = photographerCard;
     return $wrapper;
