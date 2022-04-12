@@ -7,8 +7,13 @@ function getPhotographer() {
   const params = new URLSearchParams(document.location.search);
   const idPhotographerGetString = params.get("id");
 
-  const idPhotographerGet = Number(idPhotographerGetString);
-  return idPhotographerGet;
+  // Transformation en nombre
+  if (idPhotographerGetString != "") {
+    const idPhotographerGet = Number(idPhotographerGetString);
+    return idPhotographerGet;
+  } else {
+    document.location.href = "../index.html";
+  }
 }
 
 //Fonction pour créer la section de présentation du photographe
@@ -28,6 +33,7 @@ function main(photographerMediasArray) {
   });
 }
 
+// Fonction pour l'aside - Total des likes
 function aside(photographer) {
   //Envoi des datas au constructor
   const photographerAside = new Aside(photographer);
@@ -38,7 +44,7 @@ function aside(photographer) {
   photographersAsidePage.appendChild(template.createPhotographerAsidePage());
 }
 
-//Fonction pour la création d'un filtre de la galerie
+//Fonction pour la création d'un filtre pour la galerie
 function filter(photographerMediasArray, photographerFind) {
   const filter = new Filter(photographerMediasArray);
   filter.onChangeFilter(photographerFind);
@@ -49,6 +55,7 @@ function lightbox(photographerMediasArray) {
   const lightbox = new Lightbox(mediaArray(photographerMediasArray));
   const galleryLightbox = document.querySelectorAll("#section-gallery .media");
 
+  // Evenements pour l'ouverture de la lightbox
   galleryLightbox.forEach((media) =>
     media.addEventListener("click", (e) => {
       lightbox.show(e.target.dataset.id);
