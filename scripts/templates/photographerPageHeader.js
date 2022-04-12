@@ -12,15 +12,17 @@ class PhotographerPageHeader {
     const picture = `assets/photographers/${this._photographer.portrait}`;
 
     const photographerCard = `
-        <div class="photograph-header_content">
-            <h1>${this._photographer.name}</h1>
+        <div class="photograph-header_presentation"> 
+            <h1 tabindex="0">${this._photographer.name}</h1>
+            <div role="Text" class="photograph-header_content" tabindex="0">
             <h2>${this._photographer.city}, ${this._photographer.country}</h2>
             <p>${this._photographer.tagline}</p>
+            </div>
         </div>
-        <button id="contactBtn" class="contact_button">
-            Contactez-moi
+        <button id="contactBtn" aria-label="Contact Me" class="contact_button">
+            Contactez-moi 
         </button>
-        <img class="img_photographer img_photographerPage--size" src="${picture}" alt="Photo portrait de ${this._photographer.name}"/>
+        <img tabindex="0" class="img_photographer img_photographerPage--size" src="${picture}" alt="${this._photographer.name}"/>
           `;
     $wrapper.innerHTML = photographerCard;
     return $wrapper;

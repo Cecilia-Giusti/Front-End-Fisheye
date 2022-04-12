@@ -33,14 +33,14 @@ function main(photographerMediasArray) {
   });
 }
 
-function footer(photographer) {
+function aside(photographer) {
   //Envoi des datas au constructor
-  const photographerFooter = new Footer(photographer);
+  const photographerAside = new Aside(photographer);
 
-  //Création du footer
-  const photographersFooterPage = document.querySelector("footer");
-  const template = new PhotographerPageFooter(photographerFooter);
-  photographersFooterPage.appendChild(template.createPhotographerFooterPage());
+  //Création du aside
+  const photographersAsidePage = document.querySelector("aside");
+  const template = new PhotographerPageAside(photographerAside);
+  photographersAsidePage.appendChild(template.createPhotographerAsidePage());
 }
 
 //Fonction pour la création d'un filtre de la galerie
@@ -57,6 +57,14 @@ function lightbox(photographerMediasArray) {
   galleryLightbox.forEach((media) =>
     media.addEventListener("click", (e) => {
       lightbox.show(e.target.dataset.id);
+    })
+  );
+
+  galleryLightbox.forEach((media) =>
+    media.addEventListener("keyup", (e) => {
+      if (e.key == "Enter") {
+        lightbox.show(e.target.dataset.id);
+      }
     })
   );
 }
@@ -115,8 +123,8 @@ async function init() {
   //Galerie du photographe
   main(photographerMediasArray);
 
-  //Footer de la page photographe
-  footer(photographerFind);
+  //Aside de la page photographe
+  aside(photographerFind);
 
   //Filtres
   filter(photographerMediasArray, photographerFind);

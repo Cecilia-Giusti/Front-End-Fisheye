@@ -20,7 +20,7 @@ class MediaVideo {
 
   get media() {
     const video = `
-    <video data-id="${this._id}">
+    <video tabindex="0" aria-label="${this._title}, closeup view" data-id="${this._id}">
       <source src="assets/medias/${this._media}" type="video/mp4">
     </video>
     `;
