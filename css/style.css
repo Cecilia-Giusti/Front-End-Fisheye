@@ -11,6 +11,10 @@
   display:flex;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}
+
   /* Page index */
 
 body {
@@ -222,18 +226,21 @@ p.price {
     background-color: white;
     color:#901c1c;
     font-size: 2em;
+    cursor: pointer;
   }
   
   .close {
     position:absolute;
     top:30px;
     right:0;
+    
   }
 
   .previous {
     position: absolute;
     top: 50%;
     left:-5%;
+    
   }
   
   .lightbox_content {
@@ -283,6 +290,7 @@ p.price {
   .filter-form label {
     font-weight: 700;
     font-size: 1.3em;
+    
   }
   
   .filter-form select {
@@ -294,7 +302,10 @@ p.price {
     padding-right: 20px;
     font-weight: 500;
     font-size: 1.3em;
+    cursor: pointer;
   }  
+
+  
   
   
   /* Galerie  */
@@ -349,6 +360,7 @@ p.price {
   .btn_like {
     border:none;
     background-color: white;
+    cursor: pointer;
   }
 
   /* Likes */
@@ -356,9 +368,6 @@ p.price {
   .section-gallery_like.liked {
     color: #db8876;
   }
-  
-  
-  
   
   /* Formulaire de contact */
   
@@ -372,7 +381,7 @@ p.price {
   #contact_modal{
     width: 100vw;
     height: 100vh;
-    position :fixed;
+    position :absolute;
     top:0;
     left:0;
     background-color: rgba(196, 196, 196, 0.4);
@@ -392,6 +401,8 @@ p.price {
     cursor: pointer;
     
   }
+
+  
   
   .modal {
     border-radius: 5px;
@@ -406,6 +417,7 @@ p.price {
     margin-top:2%;
     margin-bottom:30px;
     box-shadow:0px 5px 10px 1px rgba(121, 120, 120, 0.685);
+    position:relative;
   }
   
   .modal header {
@@ -431,7 +443,15 @@ p.price {
     text-align: center;
     margin-top:0;
     margin-bottom:0;
-    
+  }
+
+  .btn_closeContactForm{
+    border:none;
+    background-color: #db8876;
+    position: absolute;
+    top:4%;
+    right:3%;
+    cursor: pointer;
   }
   
   form {
