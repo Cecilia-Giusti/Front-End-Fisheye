@@ -2,15 +2,15 @@
 /* eslint-disable no-prototype-builtins */
 
 // Fonction pour récupérer l'id du photographe
-function getPhotographer(photographer) {
+function getPhotographer() {
   // Récupération de l'id du photographe dans la barre de naviguation
   const params = new URLSearchParams(document.location.search);
   const idPhotographerGetString = params.get("id");
 
+  // Transformation en nombre
   if (idPhotographerGetString != "") {
-    //Transformation de l'id en nombre
     const idPhotographerGet = Number(idPhotographerGetString);
-    return photographer.id === idPhotographerGet;
+    return idPhotographerGet;
   } else {
     document.location.href = "../index.html";
   }
@@ -33,6 +33,7 @@ function main(photographerMediasArray) {
   });
 }
 
+// Fonction pour l'aside - Total des likes
 function aside(photographer) {
   //Envoi des datas au constructor
   const photographerAside = new Aside(photographer);
@@ -43,7 +44,7 @@ function aside(photographer) {
   photographersAsidePage.appendChild(template.createPhotographerAsidePage());
 }
 
-//Fonction pour la création d'un filtre de la galerie
+//Fonction pour la création d'un filtre pour la galerie
 function filter(photographerMediasArray, photographerFind) {
   const filter = new Filter(photographerMediasArray);
   filter.onChangeFilter(photographerFind);
@@ -54,6 +55,7 @@ function lightbox(photographerMediasArray) {
   const lightbox = new Lightbox(mediaArray(photographerMediasArray));
   const galleryLightbox = document.querySelectorAll("#section-gallery .media");
 
+  // Evenements pour l'ouverture de la lightbox
   galleryLightbox.forEach((media) =>
     media.addEventListener("click", (e) => {
       lightbox.show(e.target.dataset.id);
@@ -100,7 +102,10 @@ async function init() {
   const mediaData = await getMedias();
 
   // Récupération de l'indice du photographe
-  const indPhotographer = photographersData.findIndex(getPhotographer);
+  const indPhotographer = photographersData.findIndex(
+    (photographer) => photographer.id == getPhotographer()
+  );
+
   const photographerFind = photographersData[indPhotographer];
 
   // Tri des médias par id du photographe
@@ -134,6 +139,9 @@ async function init() {
 
   // Formulaire de contact
   contactForm(photographerFind);
+
+  // Focus pour l'accessibilité
+  document.querySelector("header img").focus();
 }
 
 init();

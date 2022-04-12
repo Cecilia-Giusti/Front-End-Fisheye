@@ -10,6 +10,7 @@ class Aside {
   get totalLikes() {
     let totalLikes = 0;
 
+    // Récupération du nombre de like
     for (let i = 0; i < this.$likes.length; i++) {
       const likeString = this.$likes[i].outerText;
       const likeNumber = new Number(likeString);
@@ -18,6 +19,7 @@ class Aside {
 
     const likes = document.getElementsByClassName("btn_like");
 
+    // Evénement s'il y a un like - Ajout au total de like
     for (let like of likes) {
       like.addEventListener("click", function () {
         const total = document.getElementById("totalLike");

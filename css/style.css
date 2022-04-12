@@ -39,6 +39,14 @@ header h1 {
 .logo {
   height: 50px;
   margin-left: 100px;
+  padding-bottom:5px;
+  border-bottom: 3px solid white;
+  
+}
+
+.logo:hover, .logo:active {
+  border-bottom:3px solid #901c1c;
+  
 }
 
 /* Corps */
@@ -73,11 +81,19 @@ margin:auto;
   flex-direction: column;
 }
 
+
+
 .photographer_section article a h2{
   color: #d3573c;
   font-size: 2em;
   font-weight: 400;
   margin-bottom: 0;
+  transition-duration: 200ms;
+}
+
+.photographer_section article a:hover h2{
+  color:#901c1c;
+  transition-duration: 200ms;
 }
 
 
@@ -93,6 +109,14 @@ margin:auto;
 .img_photographerIndex--size {
   height: 200px;
   width: 200px;
+  transform: scale(1);
+  transition-duration: 300ms;
+}
+
+.img_photographerIndex:hover, .img_photographerIndex:active {
+  box-shadow: 2px 5px 10px 1px rgba(140, 139, 139, 0.51);
+  transform: scale(1.1);
+  transition-duration: 300ms ;
 }
 
 .img_photographerPage--size {
@@ -167,12 +191,14 @@ p.price {
     font-size: 1.2em;
     font-weight: 500;
     font-family: "DM Sans", sans-serif;
+    transition-duration: 300ms;
   }
   
   #section-header button:hover,
   #section-header button:focus {
     background-color: #db8876;
     color: black;
+    transition-duration: 300ms;
   }
   
  /* Aside */
@@ -333,6 +359,12 @@ p.price {
     -o-object-fit: cover;
     object-fit: cover;
     border-radius: 8px;
+    transition-duration: 300ms;
+  }
+
+  #section-gallery img:hover, #section-gallery video:hover {
+    box-shadow: 0px 3px 10px 1px rgba(101, 100, 100, 0.61);
+    transition-duration: 300ms;
   }
   
   .section-gallery_content {
@@ -351,22 +383,34 @@ p.price {
     color: #901c1c;
   }
   
-
   .section-gallery_like button i{
     color: #901c1c;
     font-size: 1.4em;
   }
 
+  /* Likes */
+
   .btn_like {
     border:none;
     background-color: white;
     cursor: pointer;
+   
   }
 
-  /* Likes */
-  
-  .section-gallery_like.liked {
-    color: #db8876;
+  .btn_like i {
+    transform: scale(1);
+    transition-duration: 300ms;
+  }
+
+  .btn_like:hover i {
+    color: #d3573c;
+    transform: scale(1.2);
+    transition-duration: 300ms;
+  }
+
+  .section-gallery_like.liked i {
+    color: #d3573c;
+    transform: scale(1.2);
   }
   
   /* Formulaire de contact */

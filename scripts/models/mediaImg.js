@@ -19,7 +19,14 @@ class MediaImg {
   }
 
   get media() {
-    const picture = `<img role="Image link" tabindex="0" src="assets/medias/${this._media}" alt="${this._title}, closeup view" data-id="${this._id}"/>`;
+    const picture = `
+    <img 
+      role="Image link" 
+      tabindex="0" 
+      src="assets/medias/${this._media}" 
+      alt="${this._title}, closeup view" 
+      data-id="${this._id}"
+      />`;
     return picture;
   }
 

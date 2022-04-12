@@ -13,7 +13,7 @@ class PhotographerCard {
 
     const photographerCard = `
             <a href="./photographer.html?id=${this._photographer.id}">
-              <img class="img_photographer img_photographerIndex--size" src="${picture}" alt=""/>
+              <img class="img_photographer img_photographerIndex img_photographerIndex--size" src="${picture}" alt=""/>
               <h2 aria-label="${this._photographer.name}">${this._photographer.name}</h2>
               </a>   
               <div role="Text paragraph" tabindex="0" class="photographer-content">
