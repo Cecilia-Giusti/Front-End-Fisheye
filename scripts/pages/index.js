@@ -4,16 +4,22 @@
 async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
 
+  // Création d'un nouvel objet pour chaque photographe
   photographers.forEach((photographer) => {
     const Template = new PhotographerCard(photographer);
     photographersSection.appendChild(Template.createPhotographerCard());
   });
 }
 
-//Fonction d'initiation de la page d'accueil
+//FONCTION D INITIALISATION DE LA PAGE D ACCUEIL
 async function init() {
+  //Récupération du fichier Json
   const photographers = await getPhotographers();
+
+  // Création du tableau des photographes
   displayData(photographers);
+
+  //Accessibilité
   document.querySelector("header img").focus();
 }
 

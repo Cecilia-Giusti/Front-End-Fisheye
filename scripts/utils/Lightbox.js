@@ -15,7 +15,7 @@ class Lightbox {
     let index = this._listElement.findIndex(
       (element) => element._id == this._currentElement._id
     );
-    console.log(index);
+
     if (index == this._listElement.length - 1) {
       this._currentElement = this._listElement[0];
     } else {
@@ -61,7 +61,6 @@ class Lightbox {
     document
       .querySelector(".lightbox_content")
       .addEventListener("keyup", (e) => {
-        console.log(e.key);
         switch (e.key) {
           case "ArrowRight":
             this.next();

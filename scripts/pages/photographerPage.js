@@ -2,18 +2,13 @@
 /* eslint-disable no-prototype-builtins */
 
 // Fonction pour récupérer l'id du photographe
-function getPhotographer(photographer) {
+function getPhotographer() {
   // Récupération de l'id du photographe dans la barre de naviguation
   const params = new URLSearchParams(document.location.search);
   const idPhotographerGetString = params.get("id");
 
-  if (idPhotographerGetString != "") {
-    //Transformation de l'id en nombre
-    const idPhotographerGet = Number(idPhotographerGetString);
-    return photographer.id === idPhotographerGet;
-  } else {
-    document.location.href = "../index.html";
-  }
+  const idPhotographerGet = Number(idPhotographerGetString);
+  return idPhotographerGet;
 }
 
 //Fonction pour créer la section de présentation du photographe
@@ -100,7 +95,10 @@ async function init() {
   const mediaData = await getMedias();
 
   // Récupération de l'indice du photographe
-  const indPhotographer = photographersData.findIndex(getPhotographer);
+  const indPhotographer = photographersData.findIndex(
+    (photographer) => photographer.id == getPhotographer()
+  );
+
   const photographerFind = photographersData[indPhotographer];
 
   // Tri des médias par id du photographe
