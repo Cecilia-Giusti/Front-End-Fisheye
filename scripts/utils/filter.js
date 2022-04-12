@@ -32,7 +32,7 @@ class Filter {
         break;
     }
     main(filter._media);
-    footer(photographerFind);
+    aside(photographerFind);
     lightbox(filter._media);
   }
 

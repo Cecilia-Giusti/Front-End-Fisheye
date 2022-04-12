@@ -26,7 +26,7 @@
     <header>
       <!-- Logo  -->
       <a href="index.html"
-        ><img src="assets/images/logo.png" alt="Logo" class="logo"
+        ><img src="assets/images/logo.png" alt="Fisheye Home page" class="logo"
       /></a>
     </header>
 
@@ -35,13 +35,16 @@
       <!-- Section de présentation  -->
       <section id="section-header" class="photograph-header"></section>
 
+      <!-- Aside -->
+      <aside></aside>
+
       <!-- LightBox -->
       <section id="lightbox" class="display-none"></section>
 
       <!-- Filtres -->
       <section id="filters">
         <form class="filter-form" action="#" method="POST">
-          <label for="filter">Trier par</label>
+          <label tabindex="0" for="filter">Trier par</label>
           <select name="filters" id="filter">
             <option value="Aucun">Aucun</option>
             <option value="popularité">Popularité</option>
@@ -55,53 +58,76 @@
       <section id="section-gallery"></section>
     </main>
 
-    <!-- Pied de page -->
-    <footer></footer>
-
     <!-- Modale de contact  -->
-    <div id="contact_modal" class="display-none">
-      <div class="modal">
-        <header>
-          <div class="modal_title">
-            <h2 id="contactMe">Contactez-moi</h2>
-            <img
-              id="closeContact"
-              src="assets/icons/close.svg"
-              alt="croix de fermeture"
-            />
-          </div>
+    <div id="contact_modal" tabindex="-1" role="dialog" class="display-none">
+      <div class="modal" role="document">
+        <header tabindex="0">
+          <h2 id="contactMe">Contactez-moi</h2>
         </header>
 
         <!-- Formulaire de contact  -->
         <form id="form" method="GET">
           <!-- Prénom -->
           <div class="formData">
-            <label for="first">Prénom</label>
-            <input class="text-control" type="text" id="first" name="first" />
+            <label for="firstname" tabindex="0">Prénom</label>
+            <input
+              class="text-control"
+              type="text"
+              id="firstname"
+              name="firstname"
+              aria-labelledby="First name"
+            />
           </div>
 
           <!-- Nom  -->
           <div class="formData">
-            <label for="last">Nom</label>
-            <input class="text-control" type="text" id="last" name="last" />
+            <label for="lastname" tabindex="0">Nom</label>
+            <input
+              class="text-control"
+              type="text"
+              id="lastname"
+              name="lastname"
+              aria-labelledby="Last name"
+            />
           </div>
           <!-- Email -->
           <div class="formData">
-            <label for="email">Email</label>
-            <input class="text-control" type="email" id="email" name="email" />
+            <label for="email" tabindex="0">Email</label>
+            <input
+              class="text-control"
+              type="email"
+              id="email"
+              name="email"
+              aria-labelledby="Email"
+            />
           </div>
 
           <!-- Message -->
           <div class="formData">
-            <label for="message">Votre message</label>
+            <label for="message" tabindex="0">Votre message</label>
             <textarea
               class="text-control"
               id="message"
               name="message"
+              aria-labelledby="Your message"
             ></textarea>
           </div>
+          <!-- Bouton d'envoi -->
+          <input
+            type="submit"
+            aria-label="Send"
+            class="submit_button"
+            value="Envoyer"
+          />
 
-          <input type="submit" class="submit_button" value="Envoyer" />
+          <!-- Bouton de fermeture -->
+          <button class="btn_closeContactForm">
+            <img
+              id="closeContact"
+              src="assets/icons/close.svg"
+              alt="Close Contact form"
+            />
+          </button>
         </form>
       </div>
     </div>
@@ -114,11 +140,11 @@
     <!-- Models -->
     <script src="scripts/models/mediaImg.js"></script>
     <script src="scripts/models/mediaVideo.js"></script>
-    <script src="scripts/models/footer.js"></script>
+    <script src="scripts/models/aside.js"></script>
 
     <!-- Templates -->
     <script src="scripts/templates/photographerPageHeader.js"></script>
-    <script src="scripts/templates/photographerPageFooter.js"></script>
+    <script src="scripts/templates/photographerPageAside.js"></script>
     <script src="scripts/templates/mediaCard.js"></script>
     <script src="scripts/templates/LightboxCard.js"></script>
 

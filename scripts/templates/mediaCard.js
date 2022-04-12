@@ -15,17 +15,17 @@ class MediaCard {
 
     // Ajout d'un évenement au clic d'un coeur
     this.$wrapper
-      .querySelector(".like-btn")
+      .querySelector(".btn_like")
       .addEventListener("click", function () {
         if (this.parentNode.classList.contains("liked")) {
           this.parentNode.classList.remove("liked");
           numberLikes -= 1;
-          this.parentNode.firstChild.innerHTML = numberLikes;
+          this.parentNode.querySelector(".like-count").innerHTML = numberLikes;
           return numberLikes;
         } else {
           this.parentNode.classList.add("liked");
           numberLikes += 1;
-          this.parentNode.firstChild.innerHTML = numberLikes;
+          this.parentNode.querySelector(".like-count").innerHTML = numberLikes;
           return numberLikes;
         }
       });
@@ -34,12 +34,12 @@ class MediaCard {
   // Méthode pour la création d'une carte dans la galerie d'un photographe
   createMediaCard() {
     const photographerCard = `
-    <div class="media">
+    <div class="media ">
     ${this._media.media}
     </div>
     <div class="section-gallery_content">
-      <h3>${this._media.title}</h3>
-      <p><span class="like-count">${this._count} </span> <i class="fas fa-heart fa-lg like-btn"></i></p> 
+      <h3 tabindex="0">${this._media.title}</h3>
+      <div class="section-gallery_like"> <p class="like-count">${this._count} </p><button class="btn_like" aria-label="likes"> <i class="fas fa-heart fa-lg"></i></button></div> 
     </div>
     `;
     this.$wrapper.innerHTML = photographerCard;
