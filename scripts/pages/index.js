@@ -14,6 +14,7 @@ async function displayData(photographers) {
 async function init() {
   const photographers = await getPhotographers();
   displayData(photographers);
+  document.querySelector("header img").focus();
 }
 
 init();
