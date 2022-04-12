@@ -34,7 +34,7 @@ class MediaCard {
   // Méthode pour la création d'une carte dans la galerie d'un photographe
   createMediaCard() {
     const photographerCard = `
-    <div class="media">
+    <div class="media ">
     ${this._media.media}
     </div>
     <div class="section-gallery_content">

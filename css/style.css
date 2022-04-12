@@ -229,6 +229,12 @@ p.price {
     top:30px;
     right:0;
   }
+
+  .previous {
+    position: absolute;
+    top: 50%;
+    left:-5%;
+  }
   
   .lightbox_content {
     display: flex;
@@ -254,8 +260,9 @@ p.price {
   }
   
   .lightbox_content--img img, .lightbox_content--img video {
-    width: 1050px;
-    height: 900px;
+    width: 100%;
+    max-height:900px;
+    max-height: 900px;
     border-radius: 5px;
     -o-object-fit: cover;
        object-fit: cover;

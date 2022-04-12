@@ -59,6 +59,14 @@ function lightbox(photographerMediasArray) {
       lightbox.show(e.target.dataset.id);
     })
   );
+
+  galleryLightbox.forEach((media) =>
+    media.addEventListener("keyup", (e) => {
+      if (e.key == "Enter") {
+        lightbox.show(e.target.dataset.id);
+      }
+    })
+  );
 }
 
 // Fonction pour le formulaire de contact

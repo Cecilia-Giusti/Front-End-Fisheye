@@ -15,6 +15,7 @@ class Lightbox {
     let index = this._listElement.findIndex(
       (element) => element._id == this._currentElement._id
     );
+    console.log(index);
     if (index == this._listElement.length - 1) {
       this._currentElement = this._listElement[0];
     } else {
@@ -41,10 +42,9 @@ class Lightbox {
   show(id) {
     this._currentElement = this.getElementById(id);
     this.display();
-    this.manageEvent();
   }
 
-  // Gestion des clics, suivant, précédent et fermeture
+  // Gestion des clics, des flèches, suivant, précédent et fermeture
   manageEvent() {
     document.querySelector(".next").addEventListener("click", () => {
       this.next();
@@ -56,6 +56,23 @@ class Lightbox {
     document.querySelector(".close").addEventListener("click", () => {
       this.close();
     });
+
+    document
+      .querySelector(".lightbox_content--img")
+      .addEventListener("keyup", (e) => {
+        console.log(e.key);
+        switch (e.key) {
+          case "ArrowRight":
+            this.next();
+            break;
+          case "ArrowLeft":
+            this.previous();
+            break;
+          case "Escape":
+            this.close();
+            break;
+        }
+      });
   }
 
   // Récupération de l'id du média et de l'image courante
