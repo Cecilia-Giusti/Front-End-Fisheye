@@ -139,9 +139,6 @@ async function init() {
 
   // Formulaire de contact
   contactForm(photographerFind);
-
-  // Focus pour l'accessibilité
-  document.querySelector("header img").focus();
 }
 
 init();
