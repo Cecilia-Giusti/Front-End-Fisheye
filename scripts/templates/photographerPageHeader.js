@@ -14,7 +14,7 @@ class PhotographerPageHeader {
     const photographerCard = `
         <div class="photograph-header_presentation"> 
             <h1 tabindex="0">${this._photographer.name}</h1>
-            <div role="Text" class="photograph-header_content" tabindex="0">
+            <div role="paragraph" class="photograph-header_content" tabindex="0">
             <h2>${this._photographer.city}, ${this._photographer.country}</h2>
             <p>${this._photographer.tagline}</p>
             </div>

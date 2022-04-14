@@ -21,7 +21,7 @@ class MediaImg {
   get media() {
     const picture = `
     <img 
-      role="Image link" 
+      role="link" 
       tabindex="0" 
       src="assets/medias/${this._media}" 
       alt="${this._title}, closeup view" 

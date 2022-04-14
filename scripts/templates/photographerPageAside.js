@@ -10,9 +10,6 @@ class PhotographerPageAside {
   createPhotographerAsidePage() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "aside");
-    $wrapper.setAttribute("role", "Text");
-    $wrapper.setAttribute("tabindex", "0");
-    $wrapper.setAttribute("aria-label", "likes");
 
     const photographerCard = `
         <p><span id="totalLike">${this._photographer.totalLikes} </span><i class="fas fa-heart fa-lg"></i> </p>

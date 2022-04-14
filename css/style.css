@@ -381,11 +381,16 @@ p.price {
     display: flex;
     align-items: center;
     color: #901c1c;
+    gap: 2px;
   }
   
   .section-gallery_like button i{
     color: #901c1c;
     font-size: 1.4em;
+  }
+
+  .like-count {
+    margin-right:2%;
   }
 
   /* Likes */
