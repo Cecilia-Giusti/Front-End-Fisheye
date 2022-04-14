@@ -82,8 +82,9 @@ function contactForm(photographerFind) {
   buttonOpen.addEventListener("click", function () {
     contact.displayModal();
   });
-  buttonClose.addEventListener("click", function () {
+  buttonClose.addEventListener("click", function (event) {
     contact.closeModal();
+    event.preventDefault();
   });
 
   // Ajout d'un évenement à l'envoi du formulaire

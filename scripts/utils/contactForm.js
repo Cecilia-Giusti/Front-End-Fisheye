@@ -41,9 +41,9 @@ class ContactForm {
     });
   }
 
-  // Fermeture de la modale
+  /**  Fermeture de la modale */
   closeModal() {
-    const contactName = document.querySelector("p.contactName");
+    const contactName = document.querySelector(".contactName ");
     contactName.remove();
     this.$modal.setAttribute("class", "display-none");
     this.$body.removeAttribute("class", "no-scroll");
@@ -68,7 +68,7 @@ class ContactForm {
       console.log(email);
       console.log(message);
     } else {
-      console.error("error");
+      console.log("Les champs ne sont pas tous remplis");
     }
   }
 }
