@@ -18,9 +18,6 @@ async function init() {
 
   // Création du tableau des photographes
   displayData(photographers);
-
-  //Accessibilité
-  document.querySelector("header img").focus();
 }
 
 init();
