@@ -32,6 +32,7 @@ class Filter {
         break;
     }
     main(filter._media);
+    document.querySelector("aside .aside").remove();
     aside(photographerFind);
     lightbox(filter._media);
   }
