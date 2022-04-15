@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-// Classe pour créer le pied de page d'un photographe
+/**  Classe pour créer le pied de page d'un photographe
+ * @constructor
+ * @param {object} photographer - Photographe de la page
+ */
 class PhotographerPageAside {
   constructor(photographer) {
     this._photographer = photographer;
   }
 
-  // Méthode pour créer le pied de page d'un photographe
+  /**  Méthode pour créer le pied de page d'un photographe*/
   createPhotographerAsidePage() {
     const $wrapper = document.createElement("div");
     $wrapper.setAttribute("class", "aside");

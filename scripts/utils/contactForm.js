@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-// Class pour la création de la modale du formulaire de contact
+/**  Class pour la création de la modale du formulaire de contact
+ * @constructor
+ * @param {object} photographer - Photographe de la page
+ */
 class ContactForm {
   constructor(photographer) {
     this._name = photographer.name;
@@ -12,7 +15,7 @@ class ContactForm {
     this.$buttonOpen = document.getElementById("contactBtn");
   }
 
-  // Ouverture de la modale
+  /**  Ouverture de la modale*/
   displayModal() {
     // Reset de la modale
     this.resetModal();
@@ -50,12 +53,12 @@ class ContactForm {
     this.$buttonOpen.focus();
   }
 
-  // Réinitialisation de la modale
+  /**  Réinitialisation de la modale*/
   resetModal() {
     this.$form.reset();
   }
 
-  // Récupération des données de la modale en les montrant dans la console
+  /**  Récupération des données de la modale en les montrant dans la console*/
   showModal() {
     const firstname = document.getElementById("firstname").value;
     const lastname = document.getElementById("lastname").value;

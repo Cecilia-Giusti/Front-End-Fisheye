@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-//Constructor Pattern - Aside
+/**Constructor Pattern - Aside
+ * @constructor
+ * @param {object} photographerFind - Le photographe choisi
+ */
 class Aside {
   constructor(photographerFind) {
     this._price = photographerFind.price;

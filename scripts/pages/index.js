@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 
-//Fonction pour créer le tableaux des photographes
+/**Fonction pour créer le tableaux des photographes
+ * @param {Array} photographers - Tous les photographes
+ */
 async function displayData(photographers) {
+  console.log(photographers);
   const photographersSection = document.querySelector(".photographer_section");
 
   // Création d'un nouvel objet pour chaque photographe
@@ -11,7 +14,7 @@ async function displayData(photographers) {
   });
 }
 
-//FONCTION D INITIALISATION DE LA PAGE D ACCUEIL
+/** FONCTION D INITIATION DE LA PAGE D ACCUEIL */
 async function init() {
   //Récupération du fichier Json
   const photographers = await getPhotographers();

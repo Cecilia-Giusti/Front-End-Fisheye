@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-// Class pour la création des articles avec les médias d'un photographe
+/**  Class pour la création des articles avec les médias d'un photographe
+ * @constructor
+ * @param {object} media - un média d'un photographe
+ */
 class MediaCard {
   constructor(media) {
     this._media = media;
@@ -9,7 +12,7 @@ class MediaCard {
     this.$wrapper = document.createElement("article");
   }
 
-  // Gestion des j'aimes
+  /**  Méthode pour la gestion des j'aimes*/
   likeButton() {
     let numberLikes = this._count;
 
@@ -31,7 +34,7 @@ class MediaCard {
       });
   }
 
-  // Méthode pour la création d'une carte dans la galerie d'un photographe
+  /** Méthode pour la création d'une carte dans la galerie d'un photographe*/
   createMediaCard() {
     const photographerCard = `
     <div class="media ">

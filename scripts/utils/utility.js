@@ -4,10 +4,12 @@
 
 // Outils
 
-// Ajout d'un type aux médias d'un photographe
-function mediaArray(photographerMediasArray) {
+/**  Ajout d'un type aux médias d'un photographe
+ * @param {Array} photographerMedias - Médias du photographe
+ */
+function mediaArray(photographerMedias) {
   let photographerMedia = [];
-  photographerMediasArray.forEach((media) => {
+  photographerMedias.forEach((media) => {
     if (media.hasOwnProperty("image")) {
       const mediasImg = new MediaFactory(media, "image");
       photographerMedia.push(mediasImg);
