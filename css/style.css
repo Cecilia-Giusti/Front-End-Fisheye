@@ -89,6 +89,7 @@ margin:auto;
   font-weight: 400;
   margin-bottom: 0;
   transition-duration: 200ms;
+  text-align: center;
 }
 
 .photographer_section article a:hover h2{

@@ -23,7 +23,6 @@ class Filter {
    */
   filter(select, photographer) {
     this.clearMainWrapper();
-    console.log(photographer);
 
     // Envoi des médias dans le bon classement
     const filter = new SelectFilter(this._media);

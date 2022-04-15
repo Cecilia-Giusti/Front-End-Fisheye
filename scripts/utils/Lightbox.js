@@ -106,13 +106,14 @@ class Lightbox {
       .setAttribute("aria-label", "image closeup view");
     document.querySelector(".lightbox_content").focus();
 
-    document.querySelector(".lightbox_content--img img").removeAttribute("alt");
+    // Pour les images
+    if (document.querySelector(".lightbox_content--img img")) {
+      document
+        .querySelector(".lightbox_content--img img")
+        .setAttribute("alt", `${this._currentElement._title}`);
+    }
 
-    document
-      .querySelector(".lightbox_content--img img")
-      .setAttribute("alt", `${this._currentElement._title}`);
-
-    //Gestion des médias videos
+    //Pour les vidéos
     if (document.querySelector(".lightbox_content--img video")) {
       document
         .querySelector(".lightbox_content--img video")
@@ -136,7 +137,6 @@ class Lightbox {
   close() {
     this.remove();
     document.querySelector("#lightbox").setAttribute("class", "display-none");
-    this.$wrapper.focus();
   }
 
   /**  Méthodes pour la réinitialisation de la lightbox*/

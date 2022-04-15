@@ -4,7 +4,6 @@
  * @param {Array} photographers - Tous les photographes
  */
 async function displayData(photographers) {
-  console.log(photographers);
   const photographersSection = document.querySelector(".photographer_section");
 
   // Création d'un nouvel objet pour chaque photographe
