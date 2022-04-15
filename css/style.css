@@ -453,8 +453,11 @@ p.price {
     
   }
 
-  
-  
+  .submit_button:hover {
+    background-color: #792828;
+    border: 2px solid white;
+  }
+
   .modal {
     border-radius: 5px;
     background-color: #db8876;
