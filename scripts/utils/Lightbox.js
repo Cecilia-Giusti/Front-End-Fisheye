@@ -76,6 +76,9 @@ class Lightbox {
           case "Escape":
             this.close();
             break;
+          case "Tab":
+            document.querySelector(".lightbox_content--img").focus();
+            break;
         }
       });
   }
@@ -99,6 +102,13 @@ class Lightbox {
     this.manageEvent();
 
     // Gestion de l'accessibilité
+    document
+      .querySelector("#section-gallery")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector("#section-header")
+      .setAttribute("aria-hidden", "true");
+    document.querySelector("aside").setAttribute("aria-hidden", "true");
     document.querySelector(".lightbox_content").setAttribute("tabindex", "-1");
     document.querySelector(".lightbox_content").setAttribute("role", "dialog");
     document
@@ -119,23 +129,14 @@ class Lightbox {
         .querySelector(".lightbox_content--img video")
         .setAttribute("controls", "");
     }
-
-    //Focus pour l'accessibilité
-    sectionLightbox.addEventListener("keyup", (e) => {
-      switch (e.key) {
-        case "Tab":
-          document.querySelector(".lightbox_content--img").focus();
-          break;
-        case "Escape":
-          this.close();
-          break;
-      }
-    });
   }
 
   /**  Méthodes pour la fermeture de la lightbox*/
   close() {
     this.remove();
+    document.querySelector("#section-gallery").removeAttribute("aria-hidden");
+    document.querySelector("#section-header").removeAttribute("aria-hidden");
+    document.querySelector("aside").removeAttribute("aria-hidden");
     document.querySelector("#lightbox").setAttribute("class", "display-none");
   }
 
