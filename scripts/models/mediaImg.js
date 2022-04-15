@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-//Constructor Pattern - Pour les médias images
+/**Constructor Pattern - Pour les médias images
+ * @constructor
+ * @param {object} data - Un média image
+ */
 class MediaImg {
   constructor(data) {
     this._photographerId = data.photographerId;

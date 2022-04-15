@@ -89,6 +89,7 @@ margin:auto;
   font-weight: 400;
   margin-bottom: 0;
   transition-duration: 200ms;
+  text-align: center;
 }
 
 .photographer_section article a:hover h2{
@@ -211,6 +212,7 @@ p.price {
   position: fixed;
   bottom: 0;
   right: 0;
+  z-index:50;
   margin-right: 40px;
 }
 

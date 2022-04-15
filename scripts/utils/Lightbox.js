@@ -1,50 +1,55 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
-// Class pour la création de la lightbox
+/**  Class pour la création de la lightbox
+ * @constructor
+ * @param {Array} photographerMedia - Tableau des médias
+ */
 class Lightbox {
-  constructor(listElement) {
+  constructor(photographerMedia) {
     this._currentElement = null;
-    this._listElement = listElement;
-
+    this._photographerMedia = photographerMedia;
     this.$wrapper = document.querySelectorAll("#section-gallery img");
   }
 
-  // Affichage du média suivant
+  /**  Méthode pour l'affichage du média suivant*/
   next() {
-    let index = this._listElement.findIndex(
+    let index = this._photographerMedia.findIndex(
       (element) => element._id == this._currentElement._id
     );
 
-    if (index == this._listElement.length - 1) {
-      this._currentElement = this._listElement[0];
+    if (index == this._photographerMedia.length - 1) {
+      this._currentElement = this._photographerMedia[0];
     } else {
-      this._currentElement = this._listElement[index + 1];
+      this._currentElement = this._photographerMedia[index + 1];
     }
     this.remove();
     this.display();
   }
-  // Affichage du média précédent
+  /** Méthode pour l'affichage du média précédent */
   previous() {
-    let index = this._listElement.findIndex(
+    let index = this._photographerMedia.findIndex(
       (element) => element._id == this._currentElement._id
     );
     if (index == 0) {
-      this._currentElement = this._listElement[this._listElement.length - 1];
+      this._currentElement =
+        this._photographerMedia[this._photographerMedia.length - 1];
     } else {
-      this._currentElement = this._listElement[index - 1];
+      this._currentElement = this._photographerMedia[index - 1];
     }
     this.remove();
     this.display();
   }
 
-  // Affichage du média sélectionné
+  /**  Méthode pour l'affichage du média sélectionné
+   * @param {string} id - Identifiant du média
+   */
   show(id) {
     this._currentElement = this.getElementById(id);
     this.display();
   }
 
-  // Gestion des clics, des flèches, suivant, précédent et fermeture
+  /** Méthode pour gérer les clics, les flèches, suivant, précédent et fermeture */
   manageEvent() {
     document.querySelector(".next").addEventListener("click", () => {
       this.next();
@@ -75,12 +80,14 @@ class Lightbox {
       });
   }
 
-  // Récupération de l'id du média et de l'image courante
+  /**  Méthode pour récupérer l'id du média et l'image courante
+   *  @param {string} id - Identifiant du média
+   */
   getElementById(id) {
-    return this._listElement.find((element) => element._id == id);
+    return this._photographerMedia.find((element) => element._id == id);
   }
 
-  // Création de la lightbox avec les données du média
+  /**  Méthode pour la création de la lightbox avec les données du média*/
   display() {
     const lightbox = new LightboxCard(this._currentElement);
 
@@ -99,13 +106,14 @@ class Lightbox {
       .setAttribute("aria-label", "image closeup view");
     document.querySelector(".lightbox_content").focus();
 
-    document.querySelector(".lightbox_content--img img").removeAttribute("alt");
+    // Pour les images
+    if (document.querySelector(".lightbox_content--img img")) {
+      document
+        .querySelector(".lightbox_content--img img")
+        .setAttribute("alt", `${this._currentElement._title}`);
+    }
 
-    document
-      .querySelector(".lightbox_content--img img")
-      .setAttribute("alt", `${this._currentElement._title}`);
-
-    //Gestion des médias videos
+    //Pour les vidéos
     if (document.querySelector(".lightbox_content--img video")) {
       document
         .querySelector(".lightbox_content--img video")
@@ -124,13 +132,14 @@ class Lightbox {
       }
     });
   }
-  // Méthodes pour la fermeture de la lightbox
+
+  /**  Méthodes pour la fermeture de la lightbox*/
   close() {
     this.remove();
     document.querySelector("#lightbox").setAttribute("class", "display-none");
-    this.$wrapper.focus();
   }
 
+  /**  Méthodes pour la réinitialisation de la lightbox*/
   remove() {
     document.querySelector(".lightbox_content").remove();
   }

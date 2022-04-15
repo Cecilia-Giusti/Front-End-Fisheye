@@ -1,21 +1,27 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
-//Class pour la création des filtres de la galerie
+/** Class pour la création des filtres de la galerie
+ * @constructor
+ * @param {Array} media - Tableau des médias du photographe de la page
+ */
 class Filter {
   constructor(media) {
     this._media = media;
-    this._$wrapper = document.getElementById("filters");
+    this.$wrapper = document.getElementById("filters");
     this.$mmainWrapper = document.getElementById("section-gallery");
   }
 
-  // Réinitialisation de la galerie
+  /**  Réinitialisation de la galerie*/
   clearMainWrapper() {
     this.$mmainWrapper.innerHTML = "";
   }
 
-  // Récupération de la selection du filtre
-  filter(select, photographerFind) {
+  /**  Méthode pour récupérer la selection du filtre
+   * @param {string} select - Selection du "Trier par"
+   * @param {object} photographer - Photographe de la page
+   */
+  filter(select, photographer) {
     this.clearMainWrapper();
 
     // Envoi des médias dans le bon classement
@@ -33,15 +39,17 @@ class Filter {
     }
     main(filter._media);
     document.querySelector("aside .aside").remove();
-    aside(photographerFind);
+    aside(photographer);
     lightbox(filter._media);
   }
 
-  // Ajout d'un évenement lors du changement du filtre
-  onChangeFilter(photographerFind) {
-    this._$wrapper.querySelector("form").addEventListener("change", (e) => {
+  /**  Ajout d'un évenement lors du changement du filtre
+   * @param {object} photographer - Photographe de la page
+   */
+  onChangeFilter(photographer) {
+    this.$wrapper.querySelector("form").addEventListener("change", (e) => {
       const select = e.target.value;
-      this.filter(select, photographerFind);
+      this.filter(select, photographer);
     });
   }
 }

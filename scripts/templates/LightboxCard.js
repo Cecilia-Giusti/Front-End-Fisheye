@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 
-// Class pour la création d'une lightbox
+/**  Class pour la création d'une lightbox
+ * @constructor
+ * @param {object} media - un média d'un photographe
+ */
 class LightboxCard {
   constructor(media) {
     this._media = media;
     this.$wrapper = document.createElement("div");
   }
 
+  /**  Création du html de la lightbox */
   createLightboxCard() {
     const lightBoxcard = `
       <div class="lightbox_content--img">

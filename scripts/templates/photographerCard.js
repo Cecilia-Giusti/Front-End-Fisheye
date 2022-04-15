@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
 
-// Classe pour créer une carte dans la page index
+/** Classe pour créer une carte dans la page index
+ * @constructor
+ * @param {object} photographer - un photographe
+ */
 class PhotographerCard {
   constructor(photographer) {
     this._photographer = photographer;
   }
 
-  // Méthode pour créer une carte de photographe
+  /**  Méthode pour créer une carte de photographe*/
   createPhotographerCard() {
     const $wrapper = document.createElement("article");
     const picture = `assets/photographers/${this._photographer.portrait}`;
 
     const photographerCard = `
             <a href="./photographer.html?id=${this._photographer.id}">
-              <img class="img_photographer img_photographerIndex img_photographerIndex--size" src="${picture}" alt=""/>
+              <img class="img_photographer img_photographerIndex img_photographerIndex--size" src="${picture}" alt="${this._photographer.name}"/>
               <h2 aria-label="${this._photographer.name}">${this._photographer.name}</h2>
               </a>   
               <div role="paragraph" tabindex="0" class="photographer-content">

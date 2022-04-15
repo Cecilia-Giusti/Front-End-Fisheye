@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-//Constructor Pattern - Pour les médias videos
+/**Constructor Pattern - Pour les médias vidéos
+ * @constructor
+ * @param {object} data - Un média vidéo
+ */
 class MediaVideo {
   constructor(data) {
     this._photographerId = data.photographerId;
@@ -21,7 +24,7 @@ class MediaVideo {
   get media() {
     const video = `
     <video tabindex="0" aria-label="${this._title}, closeup view" data-id="${this._id}">
-      <source src="assets/medias/${this._media}" type="video/mp4">
+    <source src="assets/medias/${this._media}" type="video/mp4">
     </video>
     `;
     return video;

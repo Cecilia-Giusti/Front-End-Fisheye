@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 
-// Classe pour créer l'en tête d'une page d'un photographe
+/**  Classe pour créer l'en tête d'une page d'un photographe
+ * @constructor
+ * @param {object} photographer - Photographe de la page
+ */
 class PhotographerPageHeader {
   constructor(photographer) {
     this._photographer = photographer;
   }
 
-  // Méthode pour créer la section de présentation du photographe
+  /**  Méthode pour créer la section de présentation du photographe*/
   createPhotographerHeaderPage() {
     const $wrapper = document.createElement("article");
     const picture = `assets/photographers/${this._photographer.portrait}`;

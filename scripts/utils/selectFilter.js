@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-// Class pour le classement des médias en fonction du filtre sélectionné
+/** Class pour le classement des médias en fonction du filtre sélectionné
+ * @constructor
+ * @param {Array} media - Tableau des médias du photographe de la page
+ */
 class SelectFilter {
   constructor(media) {
     this._media = media;
