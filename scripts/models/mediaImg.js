@@ -29,6 +29,7 @@ class MediaImg {
       src="assets/medias/${this._media}" 
       alt="${this._title}, closeup view" 
       data-id="${this._id}"
+      loading="lazy"
       />`;
     return picture;
   }
