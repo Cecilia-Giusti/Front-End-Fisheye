@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-prototype-builtins */
 
 /**  Fonction pour récupérer l'id du photographe*/
 function getPhotographer() {
@@ -31,6 +30,7 @@ function Header(photographer) {
 function main(photographerMedias) {
   // Création de la galerie
   const gallery = document.querySelector("#section-gallery");
+
   mediaArray(photographerMedias).forEach((media) => {
     const Template = new MediaCard(media);
     gallery.appendChild(Template.createMediaCard());
