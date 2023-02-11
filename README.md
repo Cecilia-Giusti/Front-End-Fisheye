@@ -12,7 +12,7 @@ Création d'un prototype fonctionnel
 
 <h3>Spécifications :</h3>
 
-- Intégration de la maquette en javaScript Vanille
+- Intégration de la maquette en javaScript Vanilla
 - Design pattern
 - Simulation API avec les données Json
 - Bonne accessibilité
