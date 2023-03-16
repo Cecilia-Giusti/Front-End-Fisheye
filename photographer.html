@@ -56,81 +56,81 @@
 
       <!-- Galerie -->
       <section id="section-gallery"></section>
-    </main>
 
-    <!-- Modale de contact  -->
-    <div id="contact_modal" tabindex="-1" role="dialog" class="display-none">
-      <div class="modal" role="document">
-        <header tabindex="0">
-          <h2 id="contactMe">Contactez-moi</h2>
-        </header>
+      <!-- Modale de contact  -->
+      <div id="contact_modal" tabindex="-1" role="dialog" class="display-none">
+        <div class="modal" role="document">
+          <header tabindex="0">
+            <h2 id="contactMe">Contactez-moi</h2>
+          </header>
 
-        <!-- Formulaire de contact  -->
-        <form id="form" method="GET">
-          <!-- Prénom -->
-          <div class="formData">
-            <label for="firstname" tabindex="0">Prénom</label>
+          <!-- Formulaire de contact  -->
+          <form id="form" method="GET">
+            <!-- Prénom -->
+            <div class="formData">
+              <label for="firstname" tabindex="0">Prénom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="firstname"
+                name="firstname"
+                aria-labelledby="firstname"
+              />
+            </div>
+
+            <!-- Nom  -->
+            <div class="formData">
+              <label for="lastname" tabindex="0">Nom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="lastname"
+                name="lastname"
+                aria-labelledby="lastname"
+              />
+            </div>
+            <!-- Email -->
+            <div class="formData">
+              <label for="email" tabindex="0">Email</label>
+              <input
+                class="text-control"
+                type="email"
+                id="email"
+                name="email"
+                aria-labelledby="email"
+              />
+            </div>
+
+            <!-- Message -->
+            <div class="formData">
+              <label for="message" tabindex="0">Votre message</label>
+              <textarea
+                class="text-control"
+                id="message"
+                name="message"
+                aria-labelledby="message"
+              ></textarea>
+            </div>
+            <!-- Bouton d'envoi -->
             <input
-              class="text-control"
-              type="text"
-              id="firstname"
-              name="firstname"
-              aria-labelledby="firstname"
+              type="submit"
+              aria-label="Send"
+              class="submit_button"
+              value="Envoyer"
             />
-          </div>
 
-          <!-- Nom  -->
-          <div class="formData">
-            <label for="lastname" tabindex="0">Nom</label>
-            <input
-              class="text-control"
-              type="text"
-              id="lastname"
-              name="lastname"
-              aria-labelledby="lastname"
-            />
-          </div>
-          <!-- Email -->
-          <div class="formData">
-            <label for="email" tabindex="0">Email</label>
-            <input
-              class="text-control"
-              type="email"
-              id="email"
-              name="email"
-              aria-labelledby="email"
-            />
-          </div>
-
-          <!-- Message -->
-          <div class="formData">
-            <label for="message" tabindex="0">Votre message</label>
-            <textarea
-              class="text-control"
-              id="message"
-              name="message"
-              aria-labelledby="message"
-            ></textarea>
-          </div>
-          <!-- Bouton d'envoi -->
-          <input
-            type="submit"
-            aria-label="Send"
-            class="submit_button"
-            value="Envoyer"
-          />
-
-          <!-- Bouton de fermeture -->
-          <button class="btn_closeContactForm">
-            <img
-              id="closeContact"
-              src="assets/icons/close.svg"
-              alt="Close Contact form"
-            />
-          </button>
-        </form>
+            <!-- Bouton de fermeture -->
+            <button class="btn_closeContactForm">
+              <img
+                id="closeContact"
+                src="assets/icons/close.svg"
+                alt="Close Contact form"
+              />
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </main>
 
     <!-- Scripts -->
 

@@ -18,12 +18,12 @@ class PhotographerCard {
             <a href="./photographer.html?id=${this._photographer.id}">
               <img loading="lazy" class="img_photographer img_photographerIndex img_photographerIndex--size" src="${picture}" alt="${this._photographer.name}"/>
               <h2 aria-label="${this._photographer.name}">${this._photographer.name}</h2>
-              </a>   
-              <div role="paragraph" tabindex="0" class="photographer-content">
-                <h3>${this._photographer.city}, ${this._photographer.country}</h3>
-                <p class="description"> ${this._photographer.tagline}</p>
-                <p class="price"> ${this._photographer.price}€/jour</p>
-              </div>`;
+            </a>   
+            <div role="paragraph" tabindex="0" class="photographer-content">
+              <h3>${this._photographer.city}, ${this._photographer.country}</h3>
+              <p class="description"> ${this._photographer.tagline}</p>
+              <p class="price"> ${this._photographer.price}€/jour</p>
+            </div>`;
 
     $wrapper.innerHTML = photographerCard;
     return $wrapper;
